@@ -37,6 +37,7 @@
 	background-color:rgb(255, 136, 136);
 	border-radius: 0 0 15px 15px;
 	padding: 15px;
+
 }
 
 #map{
@@ -45,6 +46,7 @@
 	margin-top:30px;
 	clear:both;
 	background-image:url(images/map.png);
+	background-size: cover;
 }
 
 #search-area{
@@ -67,20 +69,20 @@
 	left:0px;
 
 	list-style-type: none;
-	height: 150px;
 	-webkit-padding-start:0px;
 	position: relative;
 }
 
 #outer{
 	overflow: hidden;
+	height: 150px;
 }
 
 #carousel_ul li{
 	width:140px;
 	height:113px;
-	display: inline-block;
-	margin:20px;
+	display: table-cell;
+	padding:20px;
 }
 
 
@@ -96,11 +98,11 @@
 	margin-bottom: 40px;
 }
 
-a{
+span.glyphicon.glyphicon-circle-arrow-left,span.glyphicon.glyphicon-circle-arrow-right{
 	color:#D96767;
 }
 
-a:hover{
+span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-circle-arrow-right:hover:hover{
 	color:#BF5E5E;
 }
 

@@ -7,8 +7,8 @@ $(document).ready(function(){
 
 		$('#carousel_ul').animate({'left': left_indent},{queue:false, duration:500},function(){
 
-			$('#carousel_ul li:first').after($('#carousel_ul li:last'));
-			$('#carousel_ul').css({'left' : '-180px'});
+		$('#carousel_ul li:first').after($('#carousel_ul li:last'));
+		//$('#carousel_ul').css({'left' : '0px'});
 		}); 
 	});
 
@@ -23,10 +23,9 @@ $(document).ready(function(){
             $('#carousel_ul').animate({'left' : left_indent},{queue:false, duration:500},function(){  
   
             /* when sliding to left we are moving the last item before the first item */  
-            $('#carousel_ul li:first').before($('#carousel_ul li:last'));  
-  
-            /* and again, when we make that change we are setting the left indent of our unordered list to the default -210px */  
-            $('#carousel_ul').css({'left' : '-168px'});  
+            $('#carousel_ul li:last').before($('#carousel_ul li:first'));  
+   
+            //$('#carousel_ul').css({'left' : '0px'});  
             });  
   
         });  
