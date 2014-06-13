@@ -28,7 +28,7 @@
 	padding:40px;
 	color:white;
 	font-family: 'Montserrat Alternates', sans-serif;
-	font-size: 30px;
+	font-size: 40px;
 	
 }
 
@@ -54,16 +54,35 @@
 }
 
 .food-thumbnail{
-	width:140px;
-	height:113px;
 	border:2px white solid;
 	border-radius:10px;
 	float:left;
-	margin:20px;
-	overflow: hidden;
 	vertical-align: middle;
 	box-shadow: rgb(208, 208, 208) 0px 4px 5px;
+	overflow: hidden;
 }
+
+#carousel_ul{
+	list-style: none;
+	left:0px;
+
+	list-style-type: none;
+	height: 150px;
+	-webkit-padding-start:0px;
+	position: relative;
+}
+
+#outer{
+	overflow: hidden;
+}
+
+#carousel_ul li{
+	width:140px;
+	height:113px;
+	display: inline-block;
+	margin:20px;
+}
+
 
 /*
 .food-thumbnail img{
