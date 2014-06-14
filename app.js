@@ -31,6 +31,13 @@ $(document).ready(function(){
         });  
 
 
+
+$('.searchForm').submit(function(){
+    var foodSearch = $(this).find("input[name='location']").val();
+    getLocationResults();
+
+});
+
 $('.searchForm').submit(function(){
     var foodSearch = $(this).find("input[name='food']").val();
     getFoodResults();
@@ -43,7 +50,6 @@ $('.searchForm').submit(function(){
 
 
 var getFoodResults = function(){
-
 
     var request = {
         //properties go here (what you want)
@@ -61,7 +67,7 @@ var getFoodResults = function(){
         key: "AIzaSyAJtuQJKLEM3XhuDjlQwdWp72Oz1QILSG8",
     })
     .done(function(){
-        alert('result');
+        console.log('result');
     });
 
 };
