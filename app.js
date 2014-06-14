@@ -43,12 +43,29 @@ $('.searchForm').submit(function(){
 
 
 var getFoodResults = function(){
+
+
+    var request = {
+        //properties go here (what you want)
+        radius: 500,
+        types: "food"|"cafe"|"restaurant",
+        sensor: true,
+        name: "harbour"
+    };
+
+
+    //what google needs from me
     var result = $.ajax({
-        url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&sensor=false&key=AIzaSyAJtuQJKLEM3XhuDjlQwdWp72Oz1QILSG8",
+        url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json",
+        data: request,
+        key: "AIzaSyAJtuQJKLEM3XhuDjlQwdWp72Oz1QILSG8",
+    })
+    .done(function(){
+        alert('result');
     });
-    console.log(result);
 
 };
+
 
 
 
