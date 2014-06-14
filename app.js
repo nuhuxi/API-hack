@@ -54,7 +54,7 @@ var getFoodResults = function(){
     var request = {
         //properties go here (what you want)
         radius: 500,
-        types: "food"|"cafe"|"restaurant",
+        types: "food|cafe|restaurant",
         sensor: true,
         name: "harbour"
     };
@@ -65,6 +65,7 @@ var getFoodResults = function(){
         url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json",
         data: request,
         key: "AIzaSyAJtuQJKLEM3XhuDjlQwdWp72Oz1QILSG8",
+        type: "GET"
     })
     .done(function(){
         console.log('result');
