@@ -31,4 +31,26 @@ $(document).ready(function(){
         });  
 
 
+$('.searchForm').submit(function(){
+    var foodSearch = $(this).find("input[name='food']").val();
+    getFoodResults();
+
 });
+
+
+
+});//document ends
+
+
+var getFoodResults = function(){
+    var result = $.ajax({
+        url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&sensor=false&key=AIzaSyAJtuQJKLEM3XhuDjlQwdWp72Oz1QILSG8",
+    });
+    console.log(result);
+
+};
+
+
+
+
+
