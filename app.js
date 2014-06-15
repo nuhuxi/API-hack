@@ -32,17 +32,19 @@ $(document).ready(function(){
 
 
 
-$('.searchForm').submit(function(){
-    var foodSearch = $(this).find("input[name='location']").val();
-    getLocationResults();
 
-});
 
-$('.searchForm').submit(function(){
+
+$('.searchForm').submit(function(event){
+    event.preventDefault();
+
+
     var foodSearch = $(this).find("input[name='food']").val();
     getFoodResults();
 
+
 });
+
 
 
 
@@ -60,18 +62,44 @@ var getFoodResults = function(){
     };
 
 
-    //what google needs from me
+
+
     var result = $.ajax({
-        url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json",
+        url: "https://maps.googleapis.com/maps/api/place/nearbysearch",
         data: request,
         key: "AIzaSyAJtuQJKLEM3XhuDjlQwdWp72Oz1QILSG8",
-        type: "GET"
-    })
-    .done(function(){
-        console.log('result');
+        dataType: "JSONP",
+        cache:false,
+        success:function(){
+            console.log(arguments);
+        }
+
     });
 
-};
+}; //getFoodResults ends
+
+
+
+// var mapsUrl    = 'http://maps.googleapis.com/maps/api/directions/json' +
+//                  '?origin=Toronto&destination=Montreal&sensor=false';
+// var encodedUrl = encodeURIComponent(mapsUrl);
+// var proxyUrl   = 'http://jsonp.guffa.com/Proxy.ashx?url=' + encodedUrl;
+
+
+// $.ajax({
+//     url: proxyUrl,
+//     dataType: 'jsonp',
+//     cache: false,
+//     success: function (data) {
+//         console.log(data);
+//     }
+// });
+    // .done(function(){
+    //   console.log('result');
+    //     debugger;
+    //});
+
+    //};
 
 
 
