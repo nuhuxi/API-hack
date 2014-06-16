@@ -51,10 +51,11 @@ $(document).ready(function(){
         event.preventDefault();
 
         google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
-        performSearch();
+        var foodSearch = $(this).find("input[name='food']").val();
 
+        performSearch(foodSearch);
 
-        // var foodSearch = $(this).find("input[name='food']").val();
+        
         // getFoodResults();
 
 
@@ -78,18 +79,18 @@ function callback(results, status){
             position: results[i].geometry.location,
             map: map,
             //icon:results[i].icon
-
         });
 
     }
 }
 
 
-function performSearch(){
+function performSearch(searchFieldValue){
     //what I am looking for and asking the google api
     var request = {
         bounds: map.getBounds(),
-        types: ['cafe','restaurant','bakery','food']
+        types: ['cafe','restaurant','bakery','food'],
+        keyword: searchFieldValue
         //name: "McDonald's"
     };
 
