@@ -153,15 +153,8 @@ function gotlocation(pos){
 
   currentLocation = new google.maps.LatLng(crd.latitude, crd.longitude);
 
-//how the map should look
-    var mapOptions = {
-        zoom: 10,
-        center: currentLocation
-    };
-
-    //map object
-    map = new google.maps.Map(document.getElementById('map'),
-    mapOptions);
+  map.setCenter(currentLocation);
+  
 
     //map marker
     var marker = new google.maps.Marker({
