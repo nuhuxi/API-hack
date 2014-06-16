@@ -65,6 +65,7 @@ $(document).ready(function(){
 
 var map;
 var service;
+var currentLocation;
 
 function callback(results, status){
     //after I send my request, handle the results
@@ -102,7 +103,7 @@ function initialize(){
     
     //console.log(location);
 
-    var currentLocation = new google.maps.LatLng(-34.397, 150.644);
+    currentLocation = new google.maps.LatLng(-34.397, 150.644);
     
     //how the map should look
     var mapOptions = {
@@ -150,8 +151,23 @@ function gotlocation(pos){
   console.log('Longitude: ' + crd.longitude);
   console.log('More or less ' + crd.accuracy + ' meters.');
 
-  var currentLocation = new google.maps.LatLng(crd.latitude, crd.longitude);
+  currentLocation = new google.maps.LatLng(crd.latitude, crd.longitude);
 
+//how the map should look
+    var mapOptions = {
+        zoom: 10,
+        center: currentLocation
+    };
+
+    //map object
+    map = new google.maps.Map(document.getElementById('map'),
+    mapOptions);
+
+    //map marker
+    var marker = new google.maps.Marker({
+    position: currentLocation,
+    map: map
+    });
 }
 
 
