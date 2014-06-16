@@ -50,15 +50,11 @@ $(document).ready(function(){
     $('.searchForm').submit(function(event){
         event.preventDefault();
 
-        google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
+        
         var foodSearch = $(this).find("input[name='food']").val();
 
-        performSearch(foodSearch);
-
+        performSearch();
         
-        // getFoodResults();
-
-
     });
 
 
@@ -92,7 +88,9 @@ function callback(results, status){
 }
 
 
-function performSearch(searchFieldValue){
+function performSearch(){
+
+    var searchFieldValue = $('.searchForm').find("input[name='food']").val();
     //what I am looking for and asking the google api
     var request = {
         bounds: map.getBounds(),
@@ -136,8 +134,8 @@ function initialize(){
     });
 
     service = new google.maps.places.PlacesService(map);
-    
-    //google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
+
+    google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
 
 }
 
