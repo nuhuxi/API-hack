@@ -50,6 +50,11 @@ $(document).ready(function(){
     $('.searchForm').submit(function(event){
         event.preventDefault();
 
+        if (!listeningToBounds)
+        {
+            listeningToBounds = true;
+            google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
+        }
         
         //var foodSearch = $(this).find("input[name='food']").val();
 
@@ -66,6 +71,7 @@ var map;
 var service;
 var currentLocation;
 var markersOnMap = [];
+var listeningToBounds = false;
 
 function callback(results, status){
     //after I send my request, handle the results
@@ -135,7 +141,7 @@ function initialize(){
 
     service = new google.maps.places.PlacesService(map);
 
-    google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
+   
 
 }
 
