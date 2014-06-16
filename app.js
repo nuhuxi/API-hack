@@ -69,10 +69,16 @@ $(document).ready(function(){
 var map;
 var service;
 var currentLocation;
+var markersOnMap = [];
 
 function callback(results, status){
     //after I send my request, handle the results
     console.log(results);
+
+    for (var m in markersOnMap)
+    {
+        markersOnMap[m].setMap(null);
+    }
 
     for(var i = 0; i < results.length; i++){
         var marker = new google.maps.Marker({
@@ -80,6 +86,7 @@ function callback(results, status){
             map: map,
             //icon:results[i].icon
         });
+        markersOnMap.push(marker);
 
     }
 }
