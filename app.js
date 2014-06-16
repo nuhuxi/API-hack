@@ -21,7 +21,7 @@ $(document).ready(function(){
 		}); 
 	});
 
-//when user clicks the image for sliding left  
+    //when user clicks the image for sliding left  
     $('.left-scroll').click(function(){  
   
         var item_width = $('#carousel_ul li').outerWidth() + 20;  
@@ -95,27 +95,9 @@ function performSearch(){
 
 
 
-function getLocation(){
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(gotlocation);
-    }
-    else{
-        alert('error');
-    }
-}
-    
-    
-function gotlocation(pos)
-{
-  var crd = pos.coords;
 
-  console.log('Your current position is:');
-  console.log('Latitude : ' + crd.latitude);
-  console.log('Longitude: ' + crd.longitude);
-  console.log('More or less ' + crd.accuracy + ' meters.');
-}
 
-    
+
 function initialize(){
     
     //console.log(location);
@@ -148,7 +130,29 @@ function initialize(){
 
 
 
+function getLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(gotlocation);
 
+    }
+    else{
+        alert('error');
+    }
+}
+    
+    
+function gotlocation(pos){
+  
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log('Latitude : ' + crd.latitude);
+  console.log('Longitude: ' + crd.longitude);
+  console.log('More or less ' + crd.accuracy + ' meters.');
+
+  var currentLocation = new google.maps.LatLng(crd.latitude, crd.longitude);
+
+}
 
 
 
