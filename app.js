@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     google.maps.event.addDomListener(window, 'load', initialize);
-    
+
     function getLocation(){
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(initialize);
@@ -52,14 +52,14 @@ $(document).ready(function(){
 
 
 
-    $('.searchForm').submit(function(event){
-        event.preventDefault();
+    // $('.searchForm').submit(function(event){
+    //     event.preventDefault();
 
-        var foodSearch = $(this).find("input[name='food']").val();
-        getFoodResults();
+    //     var foodSearch = $(this).find("input[name='food']").val();
+    //     getFoodResults();
 
 
-    });
+    // });
 
 
 
@@ -79,6 +79,14 @@ function initialize(location){
 
     map = new google.maps.Map(document.getElementById('map'),
     mapOptions);
+
+    var marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map,
+    title:"Hello World!"
+});
+
+
 }
 
 
