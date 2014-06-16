@@ -3,7 +3,9 @@
 
 $(document).ready(function(){
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    //google.maps.event.addDomListener(window, 'load', initialize);
+
+    getLocation();
 
     
 
@@ -103,8 +105,10 @@ function initialize(){
     
     //console.log(location);
 
-    currentLocation = new google.maps.LatLng(-34.397, 150.644);
-    
+    if (!currentLocation){
+            currentLocation = new google.maps.LatLng(-34.397, 150.644);
+    }
+
     //how the map should look
     var mapOptions = {
         zoom: 10,
@@ -125,7 +129,7 @@ function initialize(){
     
     //google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
 
-    getLocation();
+    
 
 }
 
@@ -153,14 +157,16 @@ function gotlocation(pos){
 
   currentLocation = new google.maps.LatLng(crd.latitude, crd.longitude);
 
-  map.setCenter(currentLocation);
+  initialize();
+
+  /*map.setCenter(currentLocation);
   
 
     //map marker
     var marker = new google.maps.Marker({
     position: currentLocation,
     map: map
-    });
+    });*/
 }
 
 
