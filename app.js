@@ -50,6 +50,8 @@ $(document).ready(function(){
     $('.searchForm').submit(function(event){
         event.preventDefault();
 
+
+
         if (!listeningToBounds)
         {
             listeningToBounds = true;
@@ -140,9 +142,6 @@ function initialize(){
     });
 
     service = new google.maps.places.PlacesService(map);
-
-   
-
 }
 
 
