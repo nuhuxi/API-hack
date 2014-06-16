@@ -51,10 +51,10 @@ $(document).ready(function(){
         event.preventDefault();
 
         
-        var foodSearch = $(this).find("input[name='food']").val();
+        //var foodSearch = $(this).find("input[name='food']").val();
 
         performSearch();
-        
+
     });
 
 
