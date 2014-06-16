@@ -1,18 +1,11 @@
+
+
+
 $(document).ready(function(){
 
     google.maps.event.addDomListener(window, 'load', initialize);
 
-    function getLocation(){
-        if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(initialize);
-        }
-        else{
-            alert('error');
-        }
-    }
     
-    
-
 
 
 
@@ -101,6 +94,28 @@ function performSearch(){
 }
 
 
+
+function getLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(gotlocation);
+    }
+    else{
+        alert('error');
+    }
+}
+    
+    
+function gotlocation(pos)
+{
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log('Latitude : ' + crd.latitude);
+  console.log('Longitude: ' + crd.longitude);
+  console.log('More or less ' + crd.accuracy + ' meters.');
+}
+
+    
 function initialize(){
     
     //console.log(location);
@@ -126,6 +141,8 @@ function initialize(){
     service = new google.maps.places.PlacesService(map);
     
     //google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
+
+    getLocation();
 
 }
 
