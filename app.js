@@ -105,8 +105,10 @@ function initialize(){
     
     //console.log(location);
 
-    if (!currentLocation){
-            currentLocation = new google.maps.LatLng(-34.397, 150.644);
+    if (!currentLocation){ //if no currentLocation, then do this...
+            $('#map').hide();
+            $('.loading').show();
+            //currentLocation = new google.maps.LatLng(-34.397, 150.644);
     }
 
     //how the map should look
@@ -129,19 +131,17 @@ function initialize(){
     
     //google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
 
-    
-
 }
 
 
 
 function getLocation(){
     if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(gotlocation);
-
+        navigator.geolocation.getCurrentPosition(gotlocation, initialize);
     }
     else{
         alert('error');
+        initialize();
     }
 }
     
