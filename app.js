@@ -41,7 +41,7 @@ $(document).ready(function(){
             /* when sliding to left we are moving the last item before the first item */  
         $('#carousel_ul li:last').before($('#carousel_ul li:first'));  
    
-            //$('#carousel_ul').css({'left' : '0px'});  
+        //$('#carousel_ul').css({'left' : '0px'});  
         });  
   
     });  
@@ -52,14 +52,18 @@ $(document).ready(function(){
 
 
 
-    // $('.searchForm').submit(function(event){
-    //     event.preventDefault();
+    $('.searchForm').submit(function(event){
+        event.preventDefault();
 
-    //     var foodSearch = $(this).find("input[name='food']").val();
-    //     getFoodResults();
+        google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
+        performSearch();
 
 
-    // });
+        // var foodSearch = $(this).find("input[name='food']").val();
+        // getFoodResults();
+
+
+    });
 
 
 
@@ -67,21 +71,66 @@ $(document).ready(function(){
 });//document ends
 
 var map;
+var service;
 
-function initialize(location){
+function callback(results, status){
+    //after I send my request, handle the results
+    console.log(results);
+
+    for(var i = 0; i < results.length; i++){
+        var marker = new google.maps.Marker({
+            position: results[i].geometry.location,
+            map: map,
+            //icon:results[i].icon
+
+        });
+
+    }
+}
+
+
+function performSearch(){
+    //what I am looking for and asking the google api
+    var request = {
+        bounds: map.getBounds(),
+        types: ['cafe','restaurant','bakery','food']
+        //name: "McDonald's"
+    };
+
+    service.nearbySearch(request, callback);
+}
+
+
+function initialize(){
     
-    console.log(location);
+    //console.log(location);
+
+    var currentLocation = new google.maps.LatLng(-34.397, 150.644);
+    
     //how the map should look
     var mapOptions = {
         zoom: 10,
-        center: new google.maps.LatLng(-34.397, 150.644)
+        center: currentLocation
     };
 
+    //map object
     map = new google.maps.Map(document.getElementById('map'),
     mapOptions);
 
+    //map marker
+    var marker = new google.maps.Marker({
+    position: currentLocation,
+    map: map
+    });
+
+    service = new google.maps.places.PlacesService(map);
+    
+    //google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
 
 }
+
+
+
 
 
 
