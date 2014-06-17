@@ -75,10 +75,8 @@ var listeningToBounds = false;
 
 function callback(results, status){
     //after I send my request, handle the results
-    //console.log(results);
-    console.log(eachPhotoinArray);
-
-
+    console.log(results);
+   
     for (var m in markersOnMap){
         markersOnMap[m].setMap(null);
     }
@@ -91,7 +89,7 @@ function callback(results, status){
                 maxHeight:120
             });
 
-            //console.log(eachPhotoinArray);
+            console.log(eachPhotoinArray);
         }
 
 
