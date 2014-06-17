@@ -76,10 +76,8 @@ var listeningToBounds = false;
 function callback(results, status){
     //after I send my request, handle the results
     //console.log(results);
+    console.log(eachPhotoinArray);
 
-    console.log(photosArray[j].getUrl({
-                maxHeight:120
-            }));
 
     for (var m in markersOnMap){
         markersOnMap[m].setMap(null);
@@ -89,9 +87,11 @@ function callback(results, status){
 
         var photosArray = results[i].photos; //access the photos
         for(var j in photosArray){
-            console.log(photosArray[j].getUrl({
+            var eachPhotoinArray = photosArray[j].getUrl({
                 maxHeight:120
-            }));
+            });
+
+            //console.log(eachPhotoinArray);
         }
 
 
