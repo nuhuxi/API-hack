@@ -83,14 +83,10 @@ function callback(results, status){
 
     for(var i = 0; i < results.length; i++){
 
-        var photos = results.photos;
-
-        var marker = new google.maps.Marker({
+        var marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
-            map: map,
-            title: results.name,
-            icon: photos[i].getUrl({'maxWidth': 35, 'maxHeight': 35})
-            //icon:results[i].icon
+            map: map
+            //icon:
         });
         markersOnMap.push(marker);
     }
@@ -109,7 +105,7 @@ function performSearch(){
         bounds: map.getBounds(),
         types: ['cafe','restaurant','bakery','food'],
         keyword: searchFieldValue
-        //picture: get the picture value
+        
     };
 
     service.nearbySearch(request, callback);
@@ -138,10 +134,11 @@ function initialize(){
     map = new google.maps.Map(document.getElementById('map'),
     mapOptions);
 
-    //map marker
+    //map marker for current location
     var marker = new google.maps.Marker({
     position: currentLocation,
     map: map
+    //icon:
     });
 
     service = new google.maps.places.PlacesService(map);
