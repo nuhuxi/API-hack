@@ -83,13 +83,30 @@ function callback(results, status){
 
     for(var i = 0; i < results.length; i++){
 
+        var photosArray = results[i].photos; //access the photos
+        for(var j in photosArray){
+            console.log(photosArray[j].getUrl({
+                maxHeight:120
+            }));
+        }
+
+
+
         var marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
             map: map
             //icon:
         });
         markersOnMap.push(marker);
+
+        
+
+
+        
     }
+
+
+
 
 
 }
@@ -190,36 +207,6 @@ function gotlocation(pos){
 
 
 
-/*
-var getFoodResults = function(){
-
-    var request = {
-        //properties go here (what you want)
-        radius: 500,
-        types: "food|cafe|restaurant",
-        sensor: true,
-        name: "harbour"
-    };
-
-
-
-
-    var result = $.ajax({
-        url: "https://maps.googleapis.com/maps/api/place/nearbysearch",
-        data: request,
-        key: "AIzaSyAJtuQJKLEM3XhuDjlQwdWp72Oz1QILSG8",
-        dataType: "JSONP",
-        cache:false,
-        success:function(){
-            console.log(arguments);
-        }
-
-    });
-
-};
-
-
-*/
 
 
 
