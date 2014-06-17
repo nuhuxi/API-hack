@@ -57,8 +57,6 @@ $(document).ready(function(){
             listeningToBounds = true;
             google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
         }
-        
-        //var foodSearch = $(this).find("input[name='food']").val();
 
         performSearch();
 
@@ -79,21 +77,28 @@ function callback(results, status){
     //after I send my request, handle the results
     console.log(results);
 
-    for (var m in markersOnMap)
-    {
+    for (var m in markersOnMap){
         markersOnMap[m].setMap(null);
     }
 
     for(var i = 0; i < results.length; i++){
+
+        var photos = results.photos;
+
         var marker = new google.maps.Marker({
             position: results[i].geometry.location,
             map: map,
+            title: place.name,
+            icon: photos[i].getUrl({'maxWidth': 35, 'maxHeight': 35})
             //icon:results[i].icon
         });
         markersOnMap.push(marker);
-
     }
+
+
 }
+
+
 
 
 function performSearch(){
@@ -104,7 +109,7 @@ function performSearch(){
         bounds: map.getBounds(),
         types: ['cafe','restaurant','bakery','food'],
         keyword: searchFieldValue
-        //name: "McDonald's"
+        //picture: get the picture value
     };
 
     service.nearbySearch(request, callback);
@@ -117,8 +122,6 @@ function performSearch(){
 
 function initialize(){
     
-    //console.log(location);
-
     if (!currentLocation){ //if no currentLocation, then do this...
             $('#map').hide();
             $('.loading').show();
@@ -146,6 +149,9 @@ function initialize(){
 
 
 
+
+
+
 function getLocation(){
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(gotlocation, initialize);
@@ -157,6 +163,9 @@ function getLocation(){
 }
     
     
+
+
+
 function gotlocation(pos){
   
   var crd = pos.coords;
