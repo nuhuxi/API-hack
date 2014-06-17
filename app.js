@@ -75,7 +75,11 @@ var listeningToBounds = false;
 
 function callback(results, status){
     //after I send my request, handle the results
-    console.log(results);
+    //console.log(results);
+
+    console.log(photosArray[j].getUrl({
+                maxHeight:120
+            }));
 
     for (var m in markersOnMap){
         markersOnMap[m].setMap(null);
@@ -95,18 +99,11 @@ function callback(results, status){
         var marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
             map: map
-            //icon:
         });
         markersOnMap.push(marker);
-
-        
     }
 
-
-
-
-
-}
+} //callback ends here
 
 
 
