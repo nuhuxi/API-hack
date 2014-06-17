@@ -100,9 +100,6 @@ function callback(results, status){
         markersOnMap.push(marker);
 
         
-
-
-        
     }
 
 
