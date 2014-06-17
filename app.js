@@ -88,7 +88,7 @@ function callback(results, status){
         var marker = new google.maps.Marker({
             position: results[i].geometry.location,
             map: map,
-            title: place.name,
+            title: results.name,
             icon: photos[i].getUrl({'maxWidth': 35, 'maxHeight': 35})
             //icon:results[i].icon
         });
