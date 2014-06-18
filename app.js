@@ -13,12 +13,15 @@ $(document).ready(function(){
 
 	$('#carousel_ul li:first').before($('#carousel_ul li:last')); 
 	$('.right-scroll').click(function(){
+
+        $('.left-scroll').show();
+
 		var item_width = $('#carousel_ul li').outerWidth() + 20; //store item width plus the margins
 		var left_indent = parseInt($('#carousel_ul').css('left')) + item_width; //cancel out the left attribute
 
 		$('#carousel_ul').animate({'left': left_indent},{queue:false, duration:800},function(){
 
-		$('#carousel_ul li:first').after($('#carousel_ul li:last'));
+		$('#carousel_ul li:last').after($('#carousel_ul li:first'));
 		
 		}); 
 	});
@@ -34,9 +37,8 @@ $(document).ready(function(){
         $('#carousel_ul').animate({'left' : left_indent},{queue:false, duration:500},function(){  
   
             /* when sliding to left we are moving the last item before the first item */  
-        $('#carousel_ul li:last').before($('#carousel_ul li:first'));  
+        $('#carousel_ul li:first').before($('#carousel_ul li:last'));
    
-        //$('#carousel_ul').css({'left' : '0px'});  
         });  
   
     });  
@@ -104,13 +106,10 @@ function callback(results, status){
                 maxWidth:140
             });
 
-            if(i === 6){
+            if(i === 5){
                 $('.right-scroll').show();
             }
 
-
-
-            
             console.log(eachPhotoinArray);
 
             $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");
