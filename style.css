@@ -103,6 +103,8 @@
 	height:113px;
 	display: table-cell;
 	padding:20px;
+
+	position:relative;
 }
 
 
