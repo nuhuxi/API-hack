@@ -89,7 +89,7 @@ function callback(results, status){
 
         for(var j in photosArray){
             eachPhotoinArray = photosArray[j].getUrl({
-                maxHeight:120
+                maxHeight:30
             });
             
             console.log(eachPhotoinArray);
