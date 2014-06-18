@@ -92,10 +92,16 @@ function callback(results, status){
                 maxHeight:30,
                 maxWidth:30
             });
+
+            eachPhotoinArray2 = photosArray[j].getUrl({
+                maxHeight:1000,
+                maxWidth:1000
+            });
+
             
             console.log(eachPhotoinArray);
 
-            $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray+"'></div></li>");
+            $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");
         }
 
         var marker = new google.maps.Marker({ //marker for the search results
