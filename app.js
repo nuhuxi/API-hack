@@ -109,6 +109,11 @@ function callback(results, status){
                 $('.right-scroll').show();
             }
 
+            var userSearch = $('.user-search').find($('.user-search-response'));
+            var userInput = $('.searchForm').find("input[name='food']").val('');
+
+            userSearch.text(userInput);
+
             console.log(eachPhotoinArray);
 
             $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");

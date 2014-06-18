@@ -52,6 +52,7 @@
 	background-position: 50% 50%;
 	background-size: 70px;
 	background-repeat: no-repeat;
+	margin-bottom: 40px;
 }
 
 
@@ -112,8 +113,14 @@
 }
 */
 
+
+
+
+.user-search-response{
+	font-weight: bold;
+}
+
 #scroll{
-	margin-top: 40px;
 	height:150px;
 	margin-bottom: 40px;
 }
