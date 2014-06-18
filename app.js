@@ -84,7 +84,7 @@ function callback(results, status){
 
     $('#carousel_ul').empty();
     $('.right-scroll').hide();
-    $('.searchForm').find("input[name='food']").val('');
+    //$('.searchForm').find("input[name='food']").val('');
 
 
 
