@@ -152,7 +152,7 @@ function performSearch(){
 
     service.nearbySearch(request, callback);
 
-    $('.searchForm').find("input[name='food']").val('');
+    //$('.searchForm').find("input[name='food']").val('');
 }
 
 
