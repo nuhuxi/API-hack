@@ -77,6 +77,7 @@ var eachPhotoinArray;
 function callback(results, status){
     //after I send my request, handle the results
    
+
     for (var m in markersOnMap){
         markersOnMap[m].setMap(null);
     }
@@ -102,6 +103,7 @@ function callback(results, status){
             console.log(eachPhotoinArray);
 
             $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");
+            $('.left-scroll').show();
         }
 
         var marker = new google.maps.Marker({ //marker for the search results
