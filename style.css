@@ -1,11 +1,10 @@
 .left-scroll,.right-scroll{
 	font-size: 40px;
 	height:40px;
+	display: none;
 }
 
-.left-scroll{
-	display:none;
-}
+
 
 .glyphicon{
 	top:0px;
