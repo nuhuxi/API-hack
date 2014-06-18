@@ -114,7 +114,7 @@ function callback(results, status){
 
             $('.results').show();
             userSearch.text(userInput);
-            userSearchNumber.text(userSearchNumberText;
+            userSearchNumber.text(userSearchNumberText);
 
             //console.log(eachPhotoinArray);
 
