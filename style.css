@@ -3,6 +3,10 @@
 	height:40px;
 }
 
+.left-scroll{
+	display:none;
+}
+
 .glyphicon{
 	top:0px;
 }
@@ -130,7 +134,6 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 
 .left-scroll glyphicon glyphicon-circle-arrow-left{
 	width:100px;
-	display:none;
 }
 
 
