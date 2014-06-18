@@ -84,8 +84,6 @@ function callback(results, status){
 
     $('#carousel_ul').empty();
     $('.right-scroll').hide();
-    //$('.searchForm').find("input[name='food']").val('');
-
 
 
 
@@ -128,6 +126,9 @@ function callback(results, status){
         markersOnMap.push(marker);
 
     }//for loop ends
+
+
+    $('.searchForm').find("input[name='food']").val('');
 
 } //callback ends here
 
