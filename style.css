@@ -120,6 +120,10 @@
 	font-weight: bold;
 }
 
+.user-search{
+	display:none;
+}
+
 #scroll{
 	height:150px;
 	margin-bottom: 40px;
