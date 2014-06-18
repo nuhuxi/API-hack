@@ -99,7 +99,9 @@ function callback(results, status){
                 maxWidth:140
             });
 
-            x++;
+            if(i === 6){
+                $('.right-scroll').show();
+            }
 
 
 
