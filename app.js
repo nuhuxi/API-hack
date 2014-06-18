@@ -72,35 +72,37 @@ var service;
 var currentLocation;
 var markersOnMap = [];
 var listeningToBounds = false;
+var eachPhotoinArray;
 
 function callback(results, status){
     //after I send my request, handle the results
-    
    
     for (var m in markersOnMap){
         markersOnMap[m].setMap(null);
     }
 
+
     for(var i = 0; i < results.length; i++){
 
         console.log(results[i]);
-        var photosArray = results[i].photos; //access the photos
+        var photosArray = results[i].photos; //access the photos of each place
+
         for(var j in photosArray){
-            var eachPhotoinArray = photosArray[j].getUrl({
+            eachPhotoinArray = photosArray[j].getUrl({
                 maxHeight:120
             });
             
             console.log(eachPhotoinArray);
         }
 
-
-
         var marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
-            map: map
+            map: map,
+            icon: eachPhotoinArray
         });
         markersOnMap.push(marker);
-    }
+
+    }//for loop ends
 
 } //callback ends here
 
@@ -115,7 +117,6 @@ function performSearch(){
         bounds: map.getBounds(),
         types: ['cafe','restaurant','bakery','food'],
         keyword: searchFieldValue
-        
     };
 
     service.nearbySearch(request, callback);
