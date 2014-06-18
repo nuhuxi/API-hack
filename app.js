@@ -13,13 +13,13 @@ $(document).ready(function(){
 
 	$('#carousel_ul li:first').before($('#carousel_ul li:last')); 
 	$('.right-scroll').click(function(){
-		var item_width = $('#carousel_ul li').outerWidth() + 20; //get item width plus the margins
+		var item_width = $('#carousel_ul li').outerWidth() + 20; //store item width plus the margins
 		var left_indent = parseInt($('#carousel_ul').css('left')) + item_width; //cancel out the left attribute
 
-		$('#carousel_ul').animate({'left': left_indent},{queue:false, duration:500},function(){
+		$('#carousel_ul').animate({'left': left_indent},{queue:false, duration:800},function(){
 
 		$('#carousel_ul li:first').after($('#carousel_ul li:last'));
-		//$('#carousel_ul').css({'left' : '0px'});
+		
 		}); 
 	});
 

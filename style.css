@@ -130,6 +130,7 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 
 .left-scroll glyphicon glyphicon-circle-arrow-left{
 	width:100px;
+	display:hidden;
 }
 
 
