@@ -99,6 +99,10 @@ function callback(results, status){
                 maxWidth:140
             });
 
+            x++;
+
+
+
             
             console.log(eachPhotoinArray);
 
