@@ -82,6 +82,9 @@ function callback(results, status){
         markersOnMap[m].setMap(null);
     }
 
+    $('#carousel_ul').empty();
+
+
 
     for(var i = 0; i < results.length; i++){
 
