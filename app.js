@@ -83,6 +83,8 @@ function callback(results, status){
     }
 
     $('#carousel_ul').empty();
+    $('.right-scroll').hide();
+
 
 
 
