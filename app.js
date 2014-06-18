@@ -26,6 +26,8 @@ $(document).ready(function(){
 		}); 
 	});
 
+
+
     //when user clicks the image for sliding left  
     $('.left-scroll').click(function(){  
   
@@ -131,7 +133,7 @@ function callback(results, status){
     }//for loop ends
 
 
-    $('.searchForm').find("input[name='food']").val('');
+    
 
 } //callback ends here
 
@@ -149,6 +151,8 @@ function performSearch(){
     };
 
     service.nearbySearch(request, callback);
+
+    $('.searchForm').find("input[name='food']").val('');
 }
 
 
