@@ -108,12 +108,13 @@ function callback(results, status){
             }
 
             var userSearch = $('.user-search').find($('.user-search-response'));
-            var userSearchNumber = results.length;
+            var userSearchNumber = $('.user-search').find($('.user-search-response-number'));
+            var userSearchNumberText = results.length;
             var userInput = $('.searchForm').find("input[name='food']").val();
 
             $('.results').show();
             userSearch.text(userInput);
-            userSearchNumber.text(userInput);
+            userSearchNumber.text(userSearchNumberText;
 
             //console.log(eachPhotoinArray);
 
