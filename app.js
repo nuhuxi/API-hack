@@ -108,7 +108,7 @@ function callback(results, status){
             }
 
             var userSearch = $('.user-search').find($('.user-search-response'));
-            var userSearchNumber = $('.user-search').find($('.user-search-response-number'));
+            var userSearchNumber = $('.user-search-number').find($('.user-search-response-number'));
             var userSearchNumberText = results.length;
             var userInput = $('.searchForm').find("input[name='food']").val();
 
