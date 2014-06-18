@@ -103,7 +103,7 @@ function callback(results, status){
             console.log(eachPhotoinArray);
 
             $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");
-            $('.left-scroll').show();
+            $('.right-scroll').show();
         }
 
         var marker = new google.maps.Marker({ //marker for the search results
