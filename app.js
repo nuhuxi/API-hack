@@ -135,14 +135,15 @@ function callback(results, status){
             position: results[i].geometry.location,
             map: map
             //icon: eachPhotoinArray
-        });
-        markersOnMap.push(marker);
+             });
+            markersOnMap.push(marker);
 
         
     }//for loop ends
 
 
     google.maps.event.addListener(marker, 'click', function() {
+            alert('hey');
             infowindow.setContent(results[i].name);
             infowindow.open(map, marker);
     });
