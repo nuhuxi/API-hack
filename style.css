@@ -120,7 +120,7 @@
 	font-weight: bold;
 }
 
-.user-search, .user-search-number{
+.user-search, .user-search-number, .error-message{
 	display:none;
 }
 
