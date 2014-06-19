@@ -62,12 +62,6 @@ $(document).ready(function(){
 
         performSearch();
 
-        google.maps.event.addListener(marker, 'click', function() {
-            alert('hey');
-            infowindow.setContent(results[i].name);
-            infowindow.open(map, marker);
-        });
-
 
     });
 
@@ -147,8 +141,15 @@ function callback(results, status){
         
     }//for loop ends
 
+    var infowindow = new google.maps.InfoWindow({
+    //content: contentString
+    });
 
-
+    google.maps.event.addListener(marker, 'click', function() {
+            alert('hey');
+            infowindow.setContent(results[i].name);
+            infowindow.open(map, marker);
+    });
 
 
 
