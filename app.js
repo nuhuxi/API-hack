@@ -149,7 +149,6 @@ function callback(results, status){
                 infowindow.setContent(this.name);
                 infowindow.open(map, this);
             });
-            });
 
         
     }//for loop ends
