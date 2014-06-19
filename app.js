@@ -136,8 +136,8 @@ function callback(results, status){
             marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
             map: map,
-            name: results[i].name,
-            icon: eachPhotoinArray
+            name: results[i].name
+            //icon: eachPhotoinArray
             });
             markersOnMap.push(marker);
 
