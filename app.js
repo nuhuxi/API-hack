@@ -1,54 +1,50 @@
 
+var carouselEnd;
 
-
-$(document).ready(function(){
-
+$(document).ready(function () {
     //google.maps.event.addDomListener(window, 'load', initialize);
-
 
     getLocation();
 
-    
 
 
+    //$('#carousel_ul li:first').before($('#carousel_ul li:last'));
 
-	$('#carousel_ul li:first').before($('#carousel_ul li:last')); 
-	$('.right-scroll').click(function(){
-
+    $('.right-scroll').click(function () {
         $('.left-scroll').show();
+        var item_width = $('#carousel_ul li').outerWidth() + 20; //store item width plus the margins
+        var left_indent = parseInt($('#carousel_ul').css('left')) - item_width; //give left attribute
 
-		var item_width = $('#carousel_ul li').outerWidth() + 20; //store item width plus the margins
-		var left_indent = parseInt($('#carousel_ul').css('left')) - item_width; //give left attribute
-
-		$('#carousel_ul').animate({'left': left_indent},{queue:false, duration:1},function(){
-
-		$('#carousel_ul li:last').after($('#carousel_ul li:first'));
-		
-		}); 
-	});
-
-
+        $('#carousel_ul').animate({
+            'left': left_indent
+        }, 100, function () {
+            //$('#carousel_ul li:last').after($('#carousel_ul li:first'));
+            if(parseInt($('#carousel_ul').css('left')) <= -Math.abs(parseInt($('#carousel_ul').css('width')))){
+                $('.right-scroll').hide();
+            }
+        });
+    });
 
     //when user clicks the image for sliding left  
-    $('.left-scroll').click(function(){  
-  
-        var item_width = $('#carousel_ul li').outerWidth() + 20;  
-  
-        /* same as for sliding right except that it's current left indent + the item width (for the sliding right it's - item_width) */  
-        var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;  
-  
-        $('#carousel_ul').animate({'left' : left_indent},{queue:false, duration:1},function(){  
-  
-            /* when sliding to left we are moving the last item before the first item */  
-        $('#carousel_ul li:first').before($('#carousel_ul li:last'));
-   
-        });  
-  
-    });  
+    $('.left-scroll').click(function () {
+        $('.right-scroll').show();
+        var item_width = $('#carousel_ul li').outerWidth() + 20;
 
+        /* same as for sliding right except that it's current left indent + the item width (for the sliding right it's - item_width) */
+        var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
 
+        $('#carousel_ul').animate({
+            'left': left_indent
+        }, 100, function () {
+            /* when sliding to left we are moving the last item before the first item */
+            //$('#carousel_ul li:first').before($('#carousel_ul li:last'));
+            //Check if ul is at start position, if so hide left scroll.
+            if($('#carousel_ul').css('left') == '0px'){
+                $('.left-scroll').hide();
+            }
+        });
+    }); 
 
-    
 
 
 
