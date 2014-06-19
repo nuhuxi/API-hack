@@ -120,7 +120,7 @@
 	font-weight: bold;
 }
 
-.results{
+.user-search, .user-search-number{
 	display:none;
 }
 

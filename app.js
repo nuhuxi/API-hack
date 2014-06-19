@@ -122,7 +122,8 @@ function callback(results, status){
             var userSearchNumberText = results.length;
             var userInput = $('.searchForm').find("input[name='food']").val();
 
-            $('.results').show();
+            $('.user-search').show();
+            $('.user-search-number').show();
             userSearch.text(userInput);
             userSearchNumber.text(userSearchNumberText);
 
