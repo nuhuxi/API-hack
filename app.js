@@ -80,6 +80,14 @@ var eachPhotoinArray;
 function callback(results, status){
     //after I send my request, handle the results
    
+    
+  if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
+    $('.results').show();
+    userSearchNumber.text('No places found');
+    }
+
+
+
 
     for (var m in markersOnMap){
         markersOnMap[m].setMap(null);
@@ -117,12 +125,6 @@ function callback(results, status){
             $('.results').show();
             userSearch.text(userInput);
             userSearchNumber.text(userSearchNumberText);
-
-            if(results.length === null){
-                $('.results').show();
-                userSearchNumber.text('No places found');
-            }
-
 
             $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");
         }
