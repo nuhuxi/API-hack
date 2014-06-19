@@ -62,6 +62,7 @@ $(document).ready(function(){
 
         performSearch();
 
+
     });
 
 
@@ -117,7 +118,10 @@ function callback(results, status){
             userSearch.text(userInput);
             userSearchNumber.text(userSearchNumberText);
 
-            //console.log(eachPhotoinArray);
+            if(results.length === null){
+                userSearchNumber.text('No places found');
+            }
+
 
             $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");
         }
