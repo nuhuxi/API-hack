@@ -140,6 +140,8 @@ function callback(results, status){
 
         
     }//for loop ends
+
+    
     var contentString = "hello";
     var infowindow = new google.maps.InfoWindow({
         content: contentString
@@ -150,6 +152,8 @@ function callback(results, status){
             //infowindow.setContent(results[i].name);
             infowindow.open(map, marker);
     });
+
+    google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
