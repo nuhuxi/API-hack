@@ -76,6 +76,7 @@ var currentLocation;
 var markersOnMap = [];
 var listeningToBounds = false;
 var eachPhotoinArray;
+var marker;
 
 function callback(results, status){
     //after I send my request, handle the results
@@ -129,17 +130,23 @@ function callback(results, status){
             $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");
         }
 
-        var marker = new google.maps.Marker({ //marker for the search results
+            marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
             map: map,
             icon: eachPhotoinArray
         });
         markersOnMap.push(marker);
 
+        
     }//for loop ends
 
 
-    
+    google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(place.name);
+            infowindow.open(map, this);
+    });
+
+
 
 } //callback ends here
 
@@ -185,7 +192,7 @@ function initialize(){
     mapOptions);
 
     //map marker for current location
-    var marker = new google.maps.Marker({
+    var markerCurrent = new google.maps.Marker({
     position: currentLocation,
     map: map
     //icon:
