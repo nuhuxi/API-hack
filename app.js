@@ -144,7 +144,7 @@ function callback(results, status){
 
     google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent(results[i].name);
-            infowindow.open(map, this);
+            infowindow.open(map, marker);
     });
 
 
