@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         $('#carousel_ul').animate({
             'left': left_indent
-        }, 100, function () {
+        }, 300, function () {
             //$('#carousel_ul li:last').after($('#carousel_ul li:first'));
             if(parseInt($('#carousel_ul').css('left')) <= -Math.abs(parseInt($('#carousel_ul').css('width')))){
                 $('.right-scroll').hide();
@@ -35,7 +35,7 @@ $(document).ready(function () {
 
         $('#carousel_ul').animate({
             'left': left_indent
-        }, 100, function () {
+        }, 300, function () {
             /* when sliding to left we are moving the last item before the first item */
             //$('#carousel_ul li:first').before($('#carousel_ul li:last'));
             //Check if ul is at start position, if so hide left scroll.
@@ -145,12 +145,13 @@ function callback(results, status){
 
 
             $('.food-thumbnail').click(function(){
-
                 alert('yay');
-                
-                // infowindow.setContent(this.name);
-                // infowindow.open(map, this);
+                infowindow.setContent(this.name);
+                infowindow.open(map, this);
             });
+
+
+
 
         
     }//for loop ends
