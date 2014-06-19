@@ -82,8 +82,8 @@ function callback(results, status){
    
     
   if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
-    $('.results').show();
-    userSearchNumber.text('No places found');
+    $('.user-search-number').show();
+    $('.user-search-response-number').text('No places found');
     }
 
 
