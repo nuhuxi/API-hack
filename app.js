@@ -142,11 +142,11 @@ function callback(results, status){
     }//for loop ends
 
 
-    google.maps.event.addListener(marker, 'click', function() {
-            alert('hey');
-            infowindow.setContent(results[i].name);
-            infowindow.open(map, marker);
-    });
+    // google.maps.event.addListener(marker, 'click', function() {
+    //         alert('hey');
+    //         infowindow.setContent(results[i].name);
+    //         infowindow.open(map, marker);
+    // });
 
 
 
