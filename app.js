@@ -78,6 +78,7 @@ var markersOnMap = [];
 var listeningToBounds = false;
 var eachPhotoinArray;
 var marker;
+var infowindow;
 
 function callback(results, status){
     //after I send my request, handle the results
@@ -143,19 +144,10 @@ function callback(results, status){
     }//for loop ends
 
 
-    var contentString = "hello";
-    var infowindow = new google.maps.InfoWindow({
-        content: contentString
-    });
-
     google.maps.event.addListener(marker, 'click', function() {
-            //alert('hey');
-            //infowindow.setContent(results[i].name);
-            infowindow.open(map, marker);
+        infowindow.setContent(results[i].name);
+        infowindow.open(map, marker);
     });
-
-    
-
 
 
 } //callback ends here
@@ -209,6 +201,8 @@ function initialize(){
     });
 
     service = new google.maps.places.PlacesService(map);
+    infowindow = new google.maps.InfoWindow();
+
 }
 
 
