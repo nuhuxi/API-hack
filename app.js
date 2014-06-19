@@ -87,6 +87,8 @@ function callback(results, status){
     $('#carousel_ul').empty();
     $('.right-scroll').hide();
 
+    $('.user-search-number').find($('.user-search-response-number')).text('');
+
 
 
     for(var i = 0; i < results.length; i++){
