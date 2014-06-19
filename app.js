@@ -145,9 +145,11 @@ function callback(results, status){
 
 
             $('.food-thumbnail').click(function(){
-                //google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(this.name);
-                infowindow.open(map, this);
+
+                alert('yay');
+                
+                // infowindow.setContent(this.name);
+                // infowindow.open(map, this);
             });
 
         
