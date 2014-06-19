@@ -147,6 +147,14 @@ function callback(results, status){
                 infowindow.open(map, this);
             });
 
+
+            $('.food-thumbnail').click(function(){
+                //google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(this.name);
+                infowindow.open(map, this);
+            });
+            });
+
         
     }//for loop ends
 
