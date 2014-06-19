@@ -144,11 +144,12 @@ function callback(results, status){
             });
 
 
-            $('.food-thumbnail').click(function(){
-                alert('yay');
-                infowindow.setContent(this.name);
-                infowindow.open(map, this);
-            });
+            
+            // $('.food-thumbnail').click(function(){
+            //     alert('yay');
+            //     infowindow.setContent(this.name);
+            //     infowindow.open(map, this);
+            // });
 
 
 
