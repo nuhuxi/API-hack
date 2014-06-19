@@ -143,15 +143,12 @@ function callback(results, status){
 
 
             google.maps.event.addListener(marker, 'click', function() {
-                InfoWindow.setContent(results[i].name);
-                infowindow.open(map, marker);
+                InfoWindow.setContent(this.name);
+                infowindow.open(map, this);
             });
 
         
     }//for loop ends
-
-
-    
 
 
 } //callback ends here
