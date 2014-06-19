@@ -19,7 +19,7 @@ $(document).ready(function(){
 		var item_width = $('#carousel_ul li').outerWidth() + 20; //store item width plus the margins
 		var left_indent = parseInt($('#carousel_ul').css('left')) - item_width; //give left attribute
 
-		$('#carousel_ul').animate({'left': left_indent},{queue:false, duration:800},function(){
+		$('#carousel_ul').animate({'left': left_indent},{queue:false, duration:1},function(){
 
 		$('#carousel_ul li:last').after($('#carousel_ul li:first'));
 		
@@ -36,7 +36,7 @@ $(document).ready(function(){
         /* same as for sliding right except that it's current left indent + the item width (for the sliding right it's - item_width) */  
         var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;  
   
-        $('#carousel_ul').animate({'left' : left_indent},{queue:false, duration:500},function(){  
+        $('#carousel_ul').animate({'left' : left_indent},{queue:false, duration:1},function(){  
   
             /* when sliding to left we are moving the last item before the first item */  
         $('#carousel_ul li:first').before($('#carousel_ul li:last'));
@@ -117,6 +117,7 @@ function callback(results, status){
                 $('.right-scroll').show();
             }
 
+
             var userSearch = $('.user-search').find($('.user-search-response'));
             var userSearchNumber = $('.user-search-number').find($('.user-search-response-number'));
             var userSearchNumberText = results.length;
@@ -132,8 +133,8 @@ function callback(results, status){
 
             marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
-            map: map,
-            icon: eachPhotoinArray
+            map: map
+            //icon: eachPhotoinArray
         });
         markersOnMap.push(marker);
 
