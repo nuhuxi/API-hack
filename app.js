@@ -111,7 +111,7 @@ function callback(results, status){
 
 
 
-            eachPhotoinArray2.attr('rel', j);
+            $('.food-thumbnail img').attr('rel', j);
 
             $('.food-thumbnail img').click(function(){
                 infowindow.setContent(marker[m].name);
