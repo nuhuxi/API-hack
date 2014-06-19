@@ -143,7 +143,7 @@ function callback(results, status){
 
 
             google.maps.event.addListener(marker, 'click', function() {
-                InfoWindow.setContent(this.name);
+                infowindow.setContent(this.name);
                 infowindow.open(map, this);
             });
 
