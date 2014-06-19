@@ -80,6 +80,8 @@ var eachPhotoinArray;
 var marker;
 var infowindow;
 
+
+
 function callback(results, status){
     //after I send my request, handle the results
    
@@ -88,8 +90,6 @@ function callback(results, status){
     $('.error-message').show();
     $('.user-search-response-error').text($('.searchForm').find("input[name='food']").val());
     }
-
-
 
     for (var m in markersOnMap){
         markersOnMap[m].setMap(null);
@@ -136,18 +136,22 @@ function callback(results, status){
             marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
             map: map,
+            name: results[i].name,
             icon: eachPhotoinArray
-             });
+            });
             markersOnMap.push(marker);
+
+
+            google.maps.event.addListener(marker, 'click', function() {
+                InfoWindow.setContent(results[i].name);
+                infowindow.open(map, marker);
+            });
 
         
     }//for loop ends
 
 
-    google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(results[i].name);
-        infowindow.open(map, marker);
-    });
+    
 
 
 } //callback ends here
@@ -166,8 +170,6 @@ function performSearch(){
     };
 
     service.nearbySearch(request, callback);
-
-    //$('.searchForm').find("input[name='food']").val('');
 }
 
 
@@ -200,8 +202,9 @@ function initialize(){
     //icon:
     });
 
-    service = new google.maps.places.PlacesService(map);
     infowindow = new google.maps.InfoWindow();
+    service = new google.maps.places.PlacesService(map);
+    
 
 }
 
