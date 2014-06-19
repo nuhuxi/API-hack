@@ -77,7 +77,7 @@ function callback(results, status){
     
   if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
     $('.user-search').hide();
-    $('.user-search-number').hide;
+    $('.user-search-number').hide();
     $('.error-message').show();
     $('.user-search-response-error').text($('.searchForm').find("input[name='food']").val());
     }
@@ -120,6 +120,7 @@ function callback(results, status){
             $('.user-search-number').show();
             userSearch.text(userInput);
             userSearchNumber.text(userSearchNumberText);
+            $('.error-message').hide();
 
             $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");
         }
