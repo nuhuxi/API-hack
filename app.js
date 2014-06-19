@@ -86,6 +86,7 @@ function callback(results, status){
         markersOnMap[m].setMap(null);
     }
 
+
     $('#carousel_ul').empty();
     $('.right-scroll').hide();
 
@@ -106,9 +107,25 @@ function callback(results, status){
                 maxWidth:140
             });
 
+
+
+
+
+            eachPhotoinArray2.attr('rel', j);
+
+            $('.food-thumbnail img').click(function(){
+                infowindow.setContent(marker[m].name);
+                infowindow.open(map, marker[m].name);
+            });
+
+
+
             if(i === 5){
                 $('.right-scroll').show();
             }
+
+
+
 
 
             var userSearch = $('.user-search').find($('.user-search-response'));
@@ -138,15 +155,6 @@ function callback(results, status){
                 infowindow.setContent(this.name);
                 infowindow.open(map, this);
             });
-
-
-
-            // $('.food-thumbnail').click(function(){
-            //     alert('yay');
-            //     infowindow.setContent(this.name);
-            //     infowindow.open(map, this);
-            // });
-
 
 
 
