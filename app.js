@@ -8,7 +8,6 @@ $(document).ready(function () {
 
 
 
-    //$('#carousel_ul li:first').before($('#carousel_ul li:last'));
 
     $('.right-scroll').click(function () {
         $('.left-scroll').show();
@@ -18,8 +17,7 @@ $(document).ready(function () {
         $('#carousel_ul').animate({
             'left': left_indent
         }, 300, function () {
-            //$('#carousel_ul li:last').after($('#carousel_ul li:first'));
-            if(parseInt($('#carousel_ul').css('left')) <= -Math.abs(parseInt($('#carousel_ul').css('width')))){
+            if(parseInt($('#carousel_ul').css('left')) <= -Math.abs(parseInt($('#carousel_ul').css('width')))){ //if carousel ul left is more than the negative value of the ul width.
                 $('.right-scroll').hide();
             }
         });
@@ -29,17 +27,12 @@ $(document).ready(function () {
     $('.left-scroll').click(function () {
         $('.right-scroll').show();
         var item_width = $('#carousel_ul li').outerWidth() + 20;
-
-        /* same as for sliding right except that it's current left indent + the item width (for the sliding right it's - item_width) */
         var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
 
         $('#carousel_ul').animate({
             'left': left_indent
         }, 300, function () {
-            /* when sliding to left we are moving the last item before the first item */
-            //$('#carousel_ul li:first').before($('#carousel_ul li:last'));
-            //Check if ul is at start position, if so hide left scroll.
-            if($('#carousel_ul').css('left') == '0px'){
+            if($('#carousel_ul').css('left') == '0px'){   //if the carousel ul is at starting position
                 $('.left-scroll').hide();
             }
         });
@@ -144,7 +137,7 @@ function callback(results, status){
             });
 
 
-            
+
             // $('.food-thumbnail').click(function(){
             //     alert('yay');
             //     infowindow.setContent(this.name);
