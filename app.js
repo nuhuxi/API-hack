@@ -119,6 +119,7 @@ function callback(results, status){
             userSearchNumber.text(userSearchNumberText);
 
             if(results.length === null){
+                $('.results').show();
                 userSearchNumber.text('No places found');
             }
 
