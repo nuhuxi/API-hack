@@ -134,7 +134,7 @@ function callback(results, status){
             userSearchNumber.text(userSearchNumberText);
             $('.error-message').hide();
 
-            $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' data-marker = '"+i+"' src='"+eachPhotoinArray2+"'></div></li>");
+            $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div></li>");
         }
 
             marker[i] = new google.maps.Marker({ //marker for the search results
@@ -154,7 +154,9 @@ function callback(results, status){
     }//for loop ends
 
     $('#carousel_ul img').click(function(){
-        var pictureValue = $(this).attr('data-marker');
+
+        alert('yay');
+        var pictureValue = $(this).attr("value", i);
 
         google.maps.event.trigger(marker[pictureValue], 'click');  
     })
