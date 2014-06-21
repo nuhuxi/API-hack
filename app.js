@@ -66,7 +66,7 @@ var currentLocation;
 var markersOnMap = [];
 var listeningToBounds = false;
 var eachPhotoinArray;
-var marker = [];
+var marker = new Array;
 var infowindow;
 
 
