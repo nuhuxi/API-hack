@@ -153,11 +153,10 @@ function callback(results, status){
     
     }//for loop ends
 
-    $('#carousel_ul img').click(function(){
+    $('.food-thumbnail img').click(function(){
 
         alert('yay');
         var pictureValue = $(this).attr("value", i);
-
         google.maps.event.trigger(marker[pictureValue], 'click');  
     })
 
