@@ -109,8 +109,6 @@ function callback(results, status){
 
 
 
-
-
             $('.food-thumbnail img').attr('rel', j);
 
             $('.food-thumbnail img').click(function(){
@@ -125,9 +123,6 @@ function callback(results, status){
             }
 
 
-
-
-
             var userSearch = $('.user-search').find($('.user-search-response'));
             var userSearchNumber = $('.user-search-number').find($('.user-search-response-number'));
             var userSearchNumberText = results.length;
@@ -139,7 +134,7 @@ function callback(results, status){
             userSearchNumber.text(userSearchNumberText);
             $('.error-message').hide();
 
-            $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' src='"+eachPhotoinArray2+"'></div></li>");
+            $('#carousel_ul').append("<li><div class='food-thumbnail'><img style='width=100%' value='"+i+"' src='"+eachPhotoinArray2+"'></div></li>");
         }
 
             marker = new google.maps.Marker({ //marker for the search results
@@ -151,11 +146,10 @@ function callback(results, status){
             markersOnMap.push(marker);
 
 
-            google.maps.event.addListener(marker, 'click', function() {
+            google.maps.event.addListener(markersOnMap[m], 'click', function() {
                 infowindow.setContent(this.name);
                 infowindow.open(map, this);
             });
-
 
 
         
