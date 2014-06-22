@@ -82,9 +82,9 @@ function callback(results, status){
     $('.user-search-response-error').text($('.searchForm').find("input[name='food']").val());
     }
 
-    for (var m in markersOnMap){
-        markersOnMap[m].setMap(null);
-    }
+    // for (var m in markersOnMap){
+    //     markersOnMap[m].setMap(null);
+    // }
 
 
     $('#carousel_ul').empty();
@@ -134,7 +134,7 @@ function callback(results, status){
             name: results[i].name
             //icon: eachPhotoinArray
             });
-            markersOnMap.push(marker);
+            //markersOnMap.push(marker);
 
 
             google.maps.event.addListener(marker[i], 'click', function() {
