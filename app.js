@@ -109,15 +109,6 @@ function callback(results, status){
 
 
 
-            $('.food-thumbnail img').attr('rel', j);
-
-            $('.food-thumbnail img').click(function(){
-                infowindow.setContent(marker[m].name);
-                infowindow.open(map, marker[m].name);
-            });
-
-
-
             if(i === 5){
                 $('.right-scroll').show();
             }
