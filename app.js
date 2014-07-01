@@ -1,6 +1,6 @@
 
 var carouselEnd;
-var marker = new Array;
+
 
 $(document).ready(function () {
     //google.maps.event.addDomListener(window, 'load', initialize);
@@ -68,6 +68,7 @@ var markersOnMap = [];
 var listeningToBounds = false;
 var eachPhotoinArray;
 var infowindow;
+var marker;
 
 
 
@@ -146,7 +147,7 @@ function callback(results, status){
 
     $('.food-thumbnail img').click(function(){
         var pictureValue = $(this).attr('value');
-        new google.maps.event.trigger(marker[pictureValue], 'click');
+        new google.maps.event.trigger(markersOnMap[pictureValue], 'click');
     });
 
 } //callback ends here
