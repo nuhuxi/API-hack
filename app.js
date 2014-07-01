@@ -1,5 +1,6 @@
 
 var carouselEnd;
+var marker = new Array;
 
 
 $(document).ready(function () {
@@ -145,7 +146,7 @@ function callback(results, status){
     
     }//for loop ends
 
-    $('.food-thumbnail img').click(function(){
+    $('#carousel_ul img').click(function(){
         var pictureValue = $(this).attr('value');
         new google.maps.event.trigger(marker[pictureValue], 'click');
     });
