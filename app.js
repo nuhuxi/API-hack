@@ -147,7 +147,7 @@ function callback(results, status){
 
     $('.food-thumbnail img').click(function(){
         var pictureValue = $(this).attr('value');
-        new google.maps.event.trigger(markersOnMap[pictureValue], 'click');
+        new google.maps.event.trigger(marker[pictureValue], 'click');
     });
 
 } //callback ends here
