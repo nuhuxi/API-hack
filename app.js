@@ -137,7 +137,7 @@ function callback(results, status){
             markersOnMap.push(marker);
 
 
-            google.maps.event.addListener(markersOnMap[i], 'click', function() {
+            google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setContent(this.name);
                 infowindow.open(map, this);
             });
