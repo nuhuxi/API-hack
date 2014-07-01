@@ -1,6 +1,5 @@
 
 var carouselEnd;
-var marker = new Array;
 
 
 $(document).ready(function () {
@@ -70,7 +69,6 @@ var listeningToBounds = false;
 var eachPhotoinArray;
 var infowindow;
 var marker;
-
 
 
 function callback(results, status){
@@ -148,7 +146,7 @@ function callback(results, status){
 
     $('#carousel_ul img').click(function(){
         var pictureValue = $(this).attr('value');
-        new google.maps.event.trigger(marker[pictureValue], 'click');
+        new google.maps.event.trigger(markersOnMap[pictureValue], 'click');
     });
 
 } //callback ends here
