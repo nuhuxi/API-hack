@@ -145,12 +145,8 @@ function callback(results, status){
     }//for loop ends
 
     $('.food-thumbnail img').click(function(){
-
-        //alert('yay');
-        var pictureValue = $(this).attr("value", i);
-        google.maps.event.trigger(marker[pictureValue], 'click', function(){
-            infowindow.open(map, this);
-        });
+        var pictureValue = $(this).attr('value');
+        new google.maps.event.trigger(marker[pictureValue], 'click');
     });
 
 } //callback ends here
