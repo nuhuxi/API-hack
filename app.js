@@ -25,7 +25,7 @@ $(document).ready(function () {
     });
 
     //when user clicks the image for sliding left  
-    $('.left-scroll').click(function () {````````````````````````
+    $('.left-scroll').click(function () {
         $('.right-scroll').show();
         var item_width = $('#carousel_ul li').outerWidth() + 20;
         var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
@@ -74,8 +74,7 @@ var marker;
 function callback(results, status){
     //after I send my request, handle the results
    
-  $('.searchForm').find("input[name='food']").val('');
-
+    
   if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
     $('.user-search').hide();
     $('.user-search-number').hide();
