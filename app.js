@@ -74,7 +74,7 @@ var marker;
 function callback(results, status){
     //after I send my request, handle the results
    
-  $('.searchForm').find("input[name='food']").val('');
+  
     
   if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
     $('.user-search').hide();
@@ -148,7 +148,9 @@ function callback(results, status){
     $('#carousel_ul img').click(function(){
         var pictureValue = $(this).attr('value');
         new google.maps.event.trigger(markersOnMap[pictureValue], 'click');
-    });
+    }); 
+
+    $('.searchForm').find("input[name='food']").val('');
 
 } //callback ends here
 
