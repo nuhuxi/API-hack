@@ -74,6 +74,7 @@ var marker;
 function callback(results, status){
     //after I send my request, handle the results
    
+  $('.searchForm').find("input[name='food']").val('');
     
   if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
     $('.user-search').hide();
