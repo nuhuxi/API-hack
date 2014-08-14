@@ -172,6 +172,7 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 .results{
 	display: inline-block;
 	width: 750px;
+	margin: auto;
 }
 
 .resultName{
@@ -192,5 +193,6 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 
 
 .liBorder{
-	margin:auto;
+	
+	width: 750px;
 }
