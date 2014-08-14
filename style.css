@@ -167,3 +167,11 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 	overflow: hidden;
 	box-shadow: rgb(236, 236, 236) 0px 4px 2px;
 }
+
+.resultName{
+	height: 50px;
+	width: 200px;
+	position: absolute;
+	bottom: -170px;
+	text-align: center;
+}
