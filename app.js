@@ -104,7 +104,7 @@ function callback(results, status){
             });
 
             eachPhotoinArray2 = photosArray[j].getUrl({
-                maxHeight:200,
+                maxHeight:180,
                 minWidth:200
             });
 
