@@ -79,7 +79,7 @@
 .food-thumbnail{
 	/*border: 2px white solid; */
 	/* border-radius: 10px; */
-	float: left;
+	/*float: left;*/
 	/* vertical-align: middle; */
 	/* box-shadow: rgb(208, 208, 208) 0px 4px 5px; */
 	overflow: hidden;
@@ -171,7 +171,5 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 .resultName{
 	height: 50px;
 	width: 200px;
-	position: absolute;
-	bottom: -170px;
-	text-align: center;
+	padding:10px;
 }
