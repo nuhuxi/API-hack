@@ -88,7 +88,7 @@ function callback(results, status){
     }
 
 
-    $('#carousel_ul').empty();
+    $('.results').empty();
     $('.right-scroll').hide();
 
 
