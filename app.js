@@ -145,7 +145,7 @@ function callback(results, status){
     
     }//for loop ends
 
-    $('.results li').click(function(){
+    $('.results img').click(function(){
         var pictureValue = $(this).attr('value');
         new google.maps.event.trigger(markersOnMap[pictureValue], 'click');
     }); 
