@@ -126,7 +126,9 @@
 	display:none;
 }
 
-
+.user-search-number{
+	margin-bottom: 10px;
+}
 
 #scroll{
 	height:150px;
