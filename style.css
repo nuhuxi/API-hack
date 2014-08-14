@@ -77,11 +77,11 @@
 }
 
 .food-thumbnail{
-	border:2px white solid;
-	border-radius:10px;
-	float:left;
-	vertical-align: middle;
-	box-shadow: rgb(208, 208, 208) 0px 4px 5px;
+	border: 2px white solid; */
+	/* border-radius: 10px; */
+	float: left;
+	/* vertical-align: middle; */
+	/* box-shadow: rgb(208, 208, 208) 0px 4px 5px; */
 	overflow: hidden;
 }
 
@@ -149,9 +149,10 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 }
 
 
-/*
-footer{
-	height:130px;
-	background-color: gray;
+.results li{
+	float: left;
+	list-style: none;
+	background-color: black;
+	width: 200px;
+	height: 200px;
 }
-*/
