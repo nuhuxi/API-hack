@@ -88,8 +88,8 @@ function callback(results, status){
     }
 
 
-    $('.results').empty();
-    $('.right-scroll').hide();
+    //$('.results').empty();
+    //$('.right-scroll').hide();
 
 
     for(var i = 0; i < results.length; i++){
@@ -111,9 +111,9 @@ function callback(results, status){
 
 
 
-            if(i === 5){
-                $('.right-scroll').show();
-            }
+            // if(i === 5){
+            //     $('.right-scroll').show();
+            // }
 
 
             var userSearch = $('.user-search').find($('.user-search-response'));
@@ -170,9 +170,6 @@ function performSearch(){
 
     service.nearbySearch(request, callback);
 
-    var userInput = $('.searchForm').find("input[name='food']").val();
-    var userSearch = $('.user-search').find($('.user-search-response'));
-    userSearch.text(userInput);
 
 }
 
