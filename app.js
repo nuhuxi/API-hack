@@ -96,6 +96,7 @@ function callback(results, status){
 
         console.log(results[i]);
         var photosArray = results[i].photos; //access the photos of each place
+        var placeName = results[i].name;
 
         for(var j in photosArray){
             eachPhotoinArray = photosArray[j].getUrl({
@@ -128,7 +129,7 @@ function callback(results, status){
             userSearchNumber.text(userSearchNumberText);
             $('.error-message').hide();
 
-            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div><div class='resultName'>NAME</div><div class='location'>LOCATION</div></li>");
+            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>LOCATION</div></li>");
         }
 
             marker = new google.maps.Marker({ //marker for the search results
