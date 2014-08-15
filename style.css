@@ -183,7 +183,8 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 	/* width: 200px; */
 	text-align: left;
 	padding: 10px;
-	color: white;
+	color: rgb(210, 210, 210);
+	font-weight: 300;
 }
 
 
@@ -205,6 +206,10 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 
 
 .location{
-
+	color: rgb(154, 154, 154);
+	font-size: 12px;
+	text-align: right;
+	padding: 10px;
+}
 }
 
