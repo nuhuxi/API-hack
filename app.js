@@ -127,7 +127,7 @@ function callback(results, status){
             userSearchNumber.text(userSearchNumberText);
             $('.error-message').hide();
 
-            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div><div class='resultName'>NAME</div><div class='location'></div></li>");
+            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div><div class='resultName'>NAME</div><div class='location'>LOCATION</div></li>");
         }
 
             marker = new google.maps.Marker({ //marker for the search results
