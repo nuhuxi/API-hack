@@ -88,7 +88,7 @@ function callback(results, status){
     }
 
 
-    //$('.results').empty();
+    $('.results').empty();
     //$('.right-scroll').hide();
 
 
@@ -151,7 +151,7 @@ function callback(results, status){
         new google.maps.event.trigger(markersOnMap[pictureValue], 'click');
     });
 
-    $(".userChoice").val( '' );
+    $(".userChoice").val('');
     //$('.searchForm').find("input[name='food']").val('');
 
 } //callback ends here
