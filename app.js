@@ -1,5 +1,6 @@
 
 var carouselEnd;
+var searchFieldValue;
 
 
 $(document).ready(function () {
@@ -160,7 +161,7 @@ function callback(results, status){
 
 function performSearch(){
 
-    var searchFieldValue = $('.searchForm').find("input[name='food']").val();
+    searchFieldValue = $('.searchForm').find("input[name='food']").val();
     //what I am looking for and asking the google api
     var request = {
         bounds: map.getBounds(),
