@@ -165,7 +165,7 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 	float: left;
 	list-style: none;
 	background-color:#404040;
-	width: 220px;
+	width: 230px;
 	height: 250px;
 	margin-left: 20px;
 	margin-bottom: 26px;
@@ -176,7 +176,7 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 
 .results{
 	display: inline-block;
-	width: 980px;
+	width: 1000px;
 	margin: auto;
 }
 
