@@ -164,7 +164,7 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 .results li{
 	float: left;
 	list-style: none;
-	background-color:rgb(58, 53, 53);
+	background-color:#404040;
 	width: 220px;
 	height: 250px;
 	margin-left: 20px;
