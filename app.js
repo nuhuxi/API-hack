@@ -151,7 +151,7 @@ function callback(results, status){
         new google.maps.event.trigger(markersOnMap[pictureValue], 'click');
     });
 
-    $('.searchForm').find("input[name='food']").val('');
+    $('.searchForm').find(".userChoice").val('');
 
 } //callback ends here
 
