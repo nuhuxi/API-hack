@@ -10,34 +10,34 @@ $(document).ready(function () {
 
 
 
-    $('.right-scroll').click(function () {
-        $('.left-scroll').show();
-        var item_width = $('#carousel_ul li').outerWidth() + 20; //store item width plus the margins
-        var left_indent = parseInt($('#carousel_ul').css('left')) - item_width; //give left attribute
+    // $('.right-scroll').click(function () {
+    //     $('.left-scroll').show();
+    //     var item_width = $('#carousel_ul li').outerWidth() + 20; //store item width plus the margins
+    //     var left_indent = parseInt($('#carousel_ul').css('left')) - item_width; //give left attribute
 
-        $('#carousel_ul').animate({
-            'left': left_indent
-        }, 300, function () {
-            if(parseInt($('#carousel_ul').css('left')) <= -Math.abs(parseInt($('#carousel_ul').css('width')))){ //if carousel ul left is more than the negative value of the ul width.
-                $('.right-scroll').hide();
-            }
-        });
-    });
+    //     $('#carousel_ul').animate({
+    //         'left': left_indent
+    //     }, 300, function () {
+    //         if(parseInt($('#carousel_ul').css('left')) <= -Math.abs(parseInt($('#carousel_ul').css('width')))){ //if carousel ul left is more than the negative value of the ul width.
+    //             $('.right-scroll').hide();
+    //         }
+    //     });
+    // });
 
     //when user clicks the image for sliding left  
-    $('.left-scroll').click(function () {
-        $('.right-scroll').show();
-        var item_width = $('#carousel_ul li').outerWidth() + 20;
-        var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
+    // $('.left-scroll').click(function () {
+    //     $('.right-scroll').show();
+    //     var item_width = $('#carousel_ul li').outerWidth() + 20;
+    //     var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
 
-        $('#carousel_ul').animate({
-            'left': left_indent
-        }, 300, function () {
-            if($('#carousel_ul').css('left') == '0px'){   //if the carousel ul is at starting position
-                $('.left-scroll').hide();
-            }
-        });
-    }); 
+    //     $('#carousel_ul').animate({
+    //         'left': left_indent
+    //     }, 300, function () {
+    //         if($('#carousel_ul').css('left') == '0px'){   //if the carousel ul is at starting position
+    //             $('.left-scroll').hide();
+    //         }
+    //     });
+    // }); 
 
 
 
@@ -151,7 +151,7 @@ function callback(results, status){
         new google.maps.event.trigger(markersOnMap[pictureValue], 'click');
     }); 
 
-    $('.searchForm').find("input[name='food']").val('');
+    //$('.searchForm').find("input[name='food']").val('');
 
 } //callback ends here
 
