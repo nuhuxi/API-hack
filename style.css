@@ -182,8 +182,10 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 
 .resultName{
 	height: 50px;
-	width: 200px;
-	padding:10px;
+	/* width: 200px; */
+	text-align: left;
+	padding: 10px;
+	color: white;
 }
 
 
@@ -202,3 +204,9 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 	text-align: center;
 	margin-left: -20px;
 }
+
+
+.location{
+
+}
+
