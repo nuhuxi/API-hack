@@ -89,7 +89,7 @@ body{
 	/* vertical-align: middle; */
 	/* box-shadow: rgb(208, 208, 208) 0px 4px 5px; */
 	overflow: hidden;
-	height: 160px;
+	height: 190px;
 	border-bottom: 1px solid rgb(213, 213, 213);
 }
 
@@ -210,6 +210,5 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 	font-size: 12px;
 	text-align: right;
 	padding: 10px;
-}
 }
 
