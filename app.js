@@ -8,6 +8,9 @@ $(document).ready(function () {
 
     getLocation();
 
+    //searchFieldValue = $('.searchForm').find("input[name='food']").val();
+
+
 
 
 
@@ -120,11 +123,11 @@ function callback(results, status){
             var userSearch = $('.user-search').find($('.user-search-response'));
             var userSearchNumber = $('.user-search-number').find($('.user-search-response-number'));
             var userSearchNumberText = results.length;
-            var userInput = $('.searchForm').find("input[name='food']").val();
+            //var userInput = $('.searchForm').find("input[name='food']").val();
 
             $('.user-search').show();
             $('.user-search-number').show();
-            userSearch.text(userInput);
+            userSearch.text(searchFieldValue);
             userSearchNumber.text(userSearchNumberText);
             $('.error-message').hide();
 
@@ -162,6 +165,7 @@ function callback(results, status){
 function performSearch(){
 
     searchFieldValue = $('.searchForm').find("input[name='food']").val();
+    
     //what I am looking for and asking the google api
     var request = {
         bounds: map.getBounds(),
