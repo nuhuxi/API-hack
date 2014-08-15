@@ -169,6 +169,11 @@ function performSearch(){
     };
 
     service.nearbySearch(request, callback);
+
+    var userInput = $('.searchForm').find("input[name='food']").val();
+    var userSearch = $('.user-search').find($('.user-search-response'));
+    userSearch.text(userInput);
+
 }
 
 
