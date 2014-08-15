@@ -8,10 +8,6 @@ $(document).ready(function () {
 
     getLocation();
 
-    //searchFieldValue = $('.searchForm').find("input[name='food']").val();
-
-
-
 
 
     // $('.right-scroll').click(function () {
@@ -153,7 +149,7 @@ function callback(results, status){
     $('.results img').click(function(){
         var pictureValue = $(this).attr('value');
         new google.maps.event.trigger(markersOnMap[pictureValue], 'click');
-    }); 
+    });
 
     $('.searchForm').find("input[name='food']").val('');
 
