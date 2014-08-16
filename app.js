@@ -99,7 +99,7 @@ function callback(results, status){
         console.log(results[i]);
         var photosArray = results[i].photos; //access the photos of each place
         var placeName = results[i].name;
-        var placeLocation = results[i].formatted_address;
+        var placeLocation = results[i].location;
 
         for(var j in photosArray){
             eachPhotoinArray = photosArray[j].getUrl({
