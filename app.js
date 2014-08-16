@@ -76,11 +76,11 @@ function callback(results, status){
    
   
     
-  if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
-    $('.user-search').hide();
-    $('.user-search-number').hide();
-    $('.error-message').show();
-    $('.user-search-response-error').text($('.searchForm').find("input[name='food']").val());
+    if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
+        $('.user-search').hide();
+        $('.user-search-number').hide();
+        $('.error-message').show();
+        $('.user-search-response-error').text($('.searchForm').find("input[name='food']").val());
     }
 
     for (var m in markersOnMap){
@@ -99,6 +99,7 @@ function callback(results, status){
         console.log(results[i]);
         var photosArray = results[i].photos; //access the photos of each place
         var placeName = results[i].name;
+        var placeLocation = results[i].formatted_address;
 
         for(var j in photosArray){
             eachPhotoinArray = photosArray[j].getUrl({
@@ -131,7 +132,7 @@ function callback(results, status){
             userSearchNumber.text(userSearchNumberText);
             $('.error-message').hide();
 
-            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>LOCATION</div></li>");
+            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
         }
 
             marker = new google.maps.Marker({ //marker for the search results
@@ -175,8 +176,6 @@ function performSearch(){
     };
 
     service.nearbySearch(request, callback);
-
-
 }
 
 
@@ -187,9 +186,9 @@ function performSearch(){
 function initialize(){
     
     if (!currentLocation){ //if no currentLocation, then do this...
-            $('#map').hide();
-            $('.loading').show();
-            //currentLocation = new google.maps.LatLng(-34.397, 150.644);
+        $('#map').hide();
+        $('.loading').show();
+        //currentLocation = new google.maps.LatLng(-34.397, 150.644);
     }
 
     //how the map should look
