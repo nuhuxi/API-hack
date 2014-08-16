@@ -87,6 +87,8 @@ function callback(results, status){
         markersOnMap[m].setMap(null);
     }
 
+    markersOnMap = [];
+
 
     $('.results').empty();
     //$('.right-scroll').hide();
