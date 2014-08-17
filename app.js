@@ -13,16 +13,16 @@ $(document).ready(function () {
     $('.searchForm').submit(function(event){
         event.preventDefault();
 
-        if($(".userChoice").val('')){
+        if ($.trim($(".userChoice").val()) === ""){
             alert('Please Search Food');
             return false;
         }
 
-        else if (!listeningToBounds)//if false
-        {
-            listeningToBounds = true;
-            google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
-        }
+        // else if (!listeningToBounds)//if false
+        // {
+        //     listeningToBounds = true;
+        //     google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
+        // }
 
         performSearch();
 
