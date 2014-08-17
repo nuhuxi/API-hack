@@ -131,7 +131,7 @@ function performSearch(){
     //what I am looking for and asking the google api
     var request = {
         bounds: map.getBounds(), //Returns the south-west latitude/longitude and the north-east latitude/longitude of the current viewport
-        radius: '5',
+        radius: '100',
         types: ['cafe','restaurant','bakery','food'],
         keyword: searchFieldValue
     };
