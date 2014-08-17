@@ -136,7 +136,7 @@ function performSearch(){
     };
 
     service.nearbySearch(request, callback);
-    service.getDetails(request, callback);
+    //service.getDetails(request, callback);
 }
 
 
@@ -205,14 +205,6 @@ function gotlocation(pos){
 
   initialize();
 
-  /*map.setCenter(currentLocation);
-  
-
-    //map marker
-    var marker = new google.maps.Marker({
-    position: currentLocation,
-    map: map
-    });*/
 }
 
 
