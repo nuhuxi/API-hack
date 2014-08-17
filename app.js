@@ -18,12 +18,13 @@ $(document).ready(function () {
             return false;
         }
 
-        if (!listeningToBounds)//if false
+        else if (!listeningToBounds)//if false
         {
             listeningToBounds = true;
             google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
         }
 
+        performSearch();
 
     });
 
