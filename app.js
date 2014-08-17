@@ -25,7 +25,9 @@ $(document).ready(function () {
         // }
 
         performSearch();
+        $('#map').css('margin-bottom','40px');
         $('.liBorder').css('display','block');
+
 
     });
 
