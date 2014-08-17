@@ -130,7 +130,7 @@ function performSearch(){
     
     //what I am looking for and asking the google api
     var request = {
-        bounds: map.getBounds(),
+        //bounds: map.getBounds(),
         radius: 5,
         types: ['cafe','restaurant','bakery','food'],
         keyword: searchFieldValue
