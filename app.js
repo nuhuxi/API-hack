@@ -25,6 +25,7 @@ $(document).ready(function () {
         // }
 
         performSearch();
+        $('.liBorder').css('display','block');
 
     });
 
