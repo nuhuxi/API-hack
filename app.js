@@ -14,7 +14,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         if($(".userChoice").val('')){
-            alert('Please Search Food')
+            alert('Please Search Food');
             return false;
         }
 
