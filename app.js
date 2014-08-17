@@ -13,13 +13,17 @@ $(document).ready(function () {
     $('.searchForm').submit(function(event){
         event.preventDefault();
 
-        if (!listeningToBounds)
+        if($(".userChoice").val('')){
+            alert('Please Search Food')
+            return false;
+        }
+
+        if (!listeningToBounds)//if false
         {
             listeningToBounds = true;
             google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
         }
 
-        performSearch();
 
     });
 
