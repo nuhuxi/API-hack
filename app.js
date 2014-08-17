@@ -99,7 +99,7 @@ function callback(results, status){
         console.log(results[i]);
         var photosArray = results[i].photos; //access the photos of each place
         var placeName = results[i].name;
-        var placeLocation = results[i].location;
+        var placeLocation = results[i].formatted_address;
 
         for(var j in photosArray){
             eachPhotoinArray = photosArray[j].getUrl({
@@ -176,6 +176,7 @@ function performSearch(){
     };
 
     service.nearbySearch(request, callback);
+    service.getDetails(request, callback);
 }
 
 
@@ -210,8 +211,6 @@ function initialize(){
 
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
-    
-
 }
 
 
