@@ -110,7 +110,7 @@ function callback(results, status){
         var photoForPlace = false;
 
         if (photosArray && photosArray.length){
-            consle.log (photosArray);
+            console.log (photosArray);
             photoForPlace = photosArray[0].getUrl({
                 minHeight:230,
                 maxHeight:350,
