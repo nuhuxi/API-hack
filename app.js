@@ -173,12 +173,13 @@ function initialize(){
     map = new google.maps.Map(document.getElementById('map'),
     mapOptions);
 
+    var GeoMarker = new GeolocationMarker(map);
     //map marker for current location
-    var markerCurrent = new google.maps.Marker({
-    position: currentLocation,
-    map: map
-    //icon:
-    });
+    // var markerCurrent = new google.maps.Marker({
+    // position: currentLocation,
+    // map: map
+    // //icon:
+    // });
 
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
