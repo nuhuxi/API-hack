@@ -48,6 +48,7 @@ var marker;
 function placeDetailsCallback (place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     console.log (place);
+    console.log
   }
 }
 
@@ -75,9 +76,7 @@ function callback(results, status){
     for(var i = 0; i < results.length; i++){
 
         console.log(results[i]);
-        console.log(results.length);
-        console.log(results[i].photos);
-
+       
         var photosArray = results[i].photos; //access the photos of each place
         var placeName = results[i].name;
         var placeLocation = results[i].vicinity;
@@ -95,19 +94,28 @@ function callback(results, status){
         //service.getDetails({placeId: placeReference}, placeDetailsCallback);
 
 
-        for(var j in photosArray){
-            eachPhotoinArray = photosArray[j].getUrl({
-                maxHeight:30,
-                maxWidth:30
-            });
+        // for(var j in photosArray){
+        //     eachPhotoinArray = photosArray[j].getUrl({
+        //         maxHeight:30,
+        //         maxWidth:30
+        //     });
 
-            eachPhotoinArray2 = photosArray[j].getUrl({
+        //     eachPhotoinArray2 = photosArray[j].getUrl({
+        //         minHeight:230,
+        //         maxHeight:350,
+        //         minWidth:190,
+        //         maxWidth:350
+        //     });
+        // }//photo loop
+
+        var photoForPlace = false;
+
+        if (photosArray.length) photoForPlace = photosArray[0].getUrl({
                 minHeight:230,
                 maxHeight:350,
                 minWidth:190,
                 maxWidth:350
             });
-        }//photo loop
 
 
         var userSearch = $('.user-search').find($('.user-search-response'));
@@ -120,22 +128,25 @@ function callback(results, status){
         userSearchNumber.text(userSearchNumberText);
         $('.error-message').hide();
 
-        $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
+        if (photoForPlace) {
+                $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
 
-        marker = new google.maps.Marker({ //marker for the search results
-        position: results[i].geometry.location,
-        map: map,
-        name: results[i].name
-        //icon: eachPhotoinArray
-        });
+            var marker = new google.maps.Marker({ //marker for the search results
+            position: results[i].geometry.location,
+            map: map,
+            name: results[i].name
+            //icon: eachPhotoinArray
+            });
 
-        markersOnMap.push(marker);
-
+            markersOnMap.push(marker);
+       
 
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent(this.name);
             infowindow.open(map, this);
         });
+
+        }
     
     }//for loop ends
 
