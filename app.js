@@ -78,6 +78,11 @@ function callback(results, status){
         var placeName = results[i].name;
         var placeLocation = results[i].vicinity;
 
+        if(photosArray === null){
+            alert('u'); 
+        }
+
+        else{
         for(var j in photosArray){
             eachPhotoinArray = photosArray[j].getUrl({
                 maxHeight:30,
@@ -91,6 +96,7 @@ function callback(results, status){
                 maxWidth:350
             });
         }//photo loop
+        }   
 
         var userSearch = $('.user-search').find($('.user-search-response'));
         var userSearchNumber = $('.user-search-number').find($('.user-search-response-number'));
