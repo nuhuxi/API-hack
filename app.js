@@ -27,8 +27,6 @@ $(document).ready(function () {
         performSearch();
         $('#map').css('margin-bottom','40px');
         $('.liBorder').css('display','block');
-
-
     });
 
 
@@ -51,12 +49,12 @@ function callback(results, status){
    
   
     
-    // if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
-    //     $('.user-search').hide();
-    //     $('.user-search-number').hide();
-    //     $('.error-message').show();
-    //     $('.user-search-response-error').text($('.searchForm').find("input[name='food']").val());
-    // }
+    if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
+        $('.user-search').hide();
+        $('.user-search-number').hide();
+        $('.error-message').show();
+        $('.user-search-response-error').text($('.searchForm').find("input[name='food']").val());
+    }
 
     for (var m in markersOnMap){
         markersOnMap[m].setMap(null);
