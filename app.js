@@ -72,6 +72,7 @@ function callback(results, status){
 
         console.log(results[i]);
         console.log(results.length);
+        console.log(results[i].photos);
 
         var photosArray = results[i].photos; //access the photos of each place
         var placeName = results[i].name;
