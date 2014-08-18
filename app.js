@@ -176,7 +176,7 @@ function initialize(){
     //map marker for current location
     var markerCurrent = new google.maps.Marker({
     position: currentLocation,
-    map: map
+    map: map,
     icon: new google.maps.MarkerImage('https://maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',new google.maps.Size(22,22),new google.maps.Point(0,18),new google.maps.Point(11,11)),
     });
 
