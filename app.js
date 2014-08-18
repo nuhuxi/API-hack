@@ -79,7 +79,7 @@ function callback(results, status){
         var placeLocation = results[i].vicinity;
 
         if(photosArray === null){
-            alert('u'); 
+            alert('u');
         }
 
         else{
@@ -96,7 +96,7 @@ function callback(results, status){
                 maxWidth:350
             });
         }//photo loop
-        }   
+        }
 
         var userSearch = $('.user-search').find($('.user-search-response'));
         var userSearchNumber = $('.user-search-number').find($('.user-search-response-number'));
