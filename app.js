@@ -72,7 +72,8 @@ function callback(results, status){
         console.log(results[i]);
         console.log(results.length);
         console.log(searchFieldValue);
-        
+        $('.user-search-response').text(searchFieldValue);
+
         var photosArray = results[i].photos; //access the photos of each place
         var placeName = results[i].name;
         var placeLocation = results[i].vicinity;
