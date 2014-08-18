@@ -132,7 +132,7 @@ function callback(results, status){
         $('.error-message').hide();
 
         if (photoForPlace) {
-                $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+eachPhotoinArray2+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
+                $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
 
             var marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
