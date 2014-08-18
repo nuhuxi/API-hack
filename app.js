@@ -44,6 +44,14 @@ var eachPhotoinArray2;
 var infowindow;
 var marker;
 
+function placeDetailsCallback (place, status){
+
+    
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    console.log (place);
+  }
+
+}
 
 function callback(results, status){
     //after I send my request, handle the results
@@ -77,6 +85,13 @@ function callback(results, status){
         var photosArray = results[i].photos; //access the photos of each place
         var placeName = results[i].name;
         var placeLocation = results[i].vicinity;
+
+
+        var placeReference = results[i].place_id;
+        service.getDetails({
+                    placeId: placeReference
+                }, placeDetailsCallback);
+
 
         for(var j in photosArray){
             eachPhotoinArray = photosArray[j].getUrl({
@@ -147,7 +162,7 @@ function performSearch(){
     };
 
     service.nearbySearch(request, callback);
-    //service.getDetails(request, callback);
+    
 }
 
 
