@@ -110,12 +110,15 @@ function callback(results, status){
 
         var photoForPlace = false;
 
-        if (photosArray.length) photoForPlace = photosArray[0].getUrl({
+        if (photosArray.length){
+
+            photoForPlace = photosArray[0].getUrl({
                 minHeight:230,
                 maxHeight:350,
                 minWidth:190,
                 maxWidth:350
             });
+        } 
 
 
         var userSearch = $('.user-search').find($('.user-search-response'));
