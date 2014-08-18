@@ -44,20 +44,16 @@ var eachPhotoinArray2;
 var infowindow;
 var marker;
 
-function placeDetailsCallback (place, status){
 
-    
+function placeDetailsCallback (place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     console.log (place);
   }
-
 }
+
 
 function callback(results, status){
     //after I send my request, handle the results
-   
-  
-    
     if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
         $('.user-search').hide();
         $('.user-search-number').hide();
@@ -88,9 +84,15 @@ function callback(results, status){
 
 
         var placeReference = results[i].place_id;
-        service.getDetails({
-                    placeId: placeReference
-                }, placeDetailsCallback);
+
+        var placeDetailsRequest = {
+            placeId: placeReference
+        };
+
+
+        service.getDetails(placeDetailsRequest, placeDetailsCallback);
+
+        //service.getDetails({placeId: placeReference}, placeDetailsCallback);
 
 
         for(var j in photosArray){
