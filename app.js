@@ -113,7 +113,7 @@ function callback(results, status){
 
         if((!photoForPlace) || (photoForPlace === undefined)){
             //show no picture 
-            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src=''></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>")
+            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='http://www.biodiscoverygroup.com/Images/JPG/NoPhoto.jpg'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
         }
 
         else if (photoForPlace) {
