@@ -89,6 +89,10 @@ function callback(results, status){
 
         service.getDetails(placeDetailsRequest, placeDetailsCallback);
 
+        for (var j in photosArray){
+        console.log(photosArray[j].getUrl);
+        }
+
         var photoForPlace = false;
 
         if (photosArray && photosArray.length){ //if there are photos
