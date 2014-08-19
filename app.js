@@ -159,8 +159,8 @@ function performSearch(){
         bounds: map.getBounds(), //Returns the south-west latitude/longitude and the north-east latitude/longitude of the current viewport
         radius: '50000',
         types: ['cafe','restaurant','bakery','food'],
-        keyword: searchFieldValue,
-        rankBy: google.maps.places.RankBy.DISTANCE
+        keyword: searchFieldcal
+        //rankBy: google.maps.places.RankBy.DISTANCE
     };
 
     service.nearbySearch(request, callback);
