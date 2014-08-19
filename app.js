@@ -93,9 +93,9 @@ function callback(results, status){
 
         if (photosArray && photosArray.length){ //if there are photos
             photoForPlace = photosArray[0].getUrl({ //make photoForPlace true by accessing the first photo
-                minHeight:230,
-                maxHeight:350,
-                minWidth:190,
+                minHeight:190,
+                maxHeight:250,
+                minWidth:230,
                 maxWidth:350
             });
         }
