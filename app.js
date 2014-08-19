@@ -117,7 +117,7 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
+            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
         }
 
 
