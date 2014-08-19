@@ -92,7 +92,7 @@ function callback(results, status){
         var photoForPlace = false;
 
         if (photosArray && photosArray.length){ //if there are photos
-            photoForPlace = photosArray[0].getUrl({ //make photoForPlace true
+            photoForPlace = photosArray[0].getUrl({ //make photoForPlace true by accessing the first photo
                 minHeight:230,
                 maxHeight:350,
                 minWidth:190,
@@ -111,12 +111,12 @@ function callback(results, status){
         userSearchNumber.text(userSearchNumberText);
         $('.error-message').hide();
 
-        if((!photoForPlace) || (photoForPlace === undefined)){
-            //show no picture 
-            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='http://www.biodiscoverygroup.com/Images/JPG/NoPhoto.jpg'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
-        }
+        // if((!photoForPlace) || (photoForPlace === undefined)){
+        //     //show no picture 
+        //     $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='http://www.biodiscoverygroup.com/Images/JPG/NoPhoto.jpg'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
+        // }
 
-        else if (photoForPlace) {
+       if (photoForPlace) {
             $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
         }
 
