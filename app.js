@@ -47,7 +47,7 @@ var marker;
 
 function placeDetailsCallback (place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    //console.log (place);
+    console.log (place);
   }
 }
 
@@ -80,7 +80,6 @@ function callback(results, status){
         var placeName = results[i].name;
         var placeLocation = results[i].vicinity;
 
-
         var placeReference = results[i].place_id;
 
         var placeDetailsRequest = {
@@ -90,35 +89,16 @@ function callback(results, status){
 
         service.getDetails(placeDetailsRequest, placeDetailsCallback);
 
-        //service.getDetails({placeId: placeReference}, placeDetailsCallback);
-
-
-        // for(var j in photosArray){
-        //     eachPhotoinArray = photosArray[j].getUrl({
-        //         maxHeight:30,
-        //         maxWidth:30
-        //     });
-
-        //     eachPhotoinArray2 = photosArray[j].getUrl({
-        //         minHeight:230,
-        //         maxHeight:350,
-        //         minWidth:190,
-        //         maxWidth:350
-        //     });
-        // }//photo loop
-
         var photoForPlace = false;
 
-        if (photosArray && photosArray.length){
-            console.log (photosArray);
-            photoForPlace = photosArray[0].getUrl({
+        if (photosArray && photosArray.length){ //if there are photos
+            photoForPlace = photosArray[0].getUrl({ //make photoForPlace true
                 minHeight:230,
                 maxHeight:350,
                 minWidth:190,
                 maxWidth:350
             });
-            console.log (photoForPlace);
-        } 
+        }
 
 
         var userSearch = $('.user-search').find($('.user-search-response'));
@@ -131,25 +111,30 @@ function callback(results, status){
         userSearchNumber.text(userSearchNumberText);
         $('.error-message').hide();
 
-        if (photoForPlace) {
-                $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
+        if((!photoForPlace) || (photoForPlace === undefined)){
+            //show no picture 
+            //$('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>")
+        }
 
-            var marker = new google.maps.Marker({ //marker for the search results
-            position: results[i].geometry.location,
-            map: map,
-            name: results[i].name
-            //icon: eachPhotoinArray
-            });
+        else if (photoForPlace) {
+            $('.results').append("<li><div class='food-thumbnail'><img style='width=100%' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
+        }
 
-            markersOnMap.push(marker);
+
+        var marker = new google.maps.Marker({ //marker for the search results
+        position: results[i].geometry.location,
+        map: map,
+        name: results[i].name
+        //icon: eachPhotoinArray
+        });
+
+        markersOnMap.push(marker);
        
 
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent(this.name);
             infowindow.open(map, this);
         });
-
-        }
     
     }//for loop ends
 
