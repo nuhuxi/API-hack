@@ -181,7 +181,7 @@ function initialize(){
 
     //how the map should look
     var mapOptions = {
-        zoom: 16,
+        zoom: 15,
         center: currentLocation
     };
 
