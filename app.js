@@ -14,7 +14,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         if ($.trim($(".userChoice").val()) === ""){
-            alert('Please Search Food');
+            alert('Enter your craving!');
             return false;
         }
 
@@ -39,8 +39,6 @@ var service;
 var currentLocation;
 var markersOnMap = [];
 var listeningToBounds = false;
-var eachPhotoinArray;
-var eachPhotoinArray2;
 var infowindow;
 var marker;
 
@@ -48,6 +46,7 @@ var marker;
 function placeDetailsCallback (place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     console.log (place);
+    console.log(place.address_components);
   }
 }
 
@@ -182,7 +181,7 @@ function initialize(){
 
     //how the map should look
     var mapOptions = {
-        zoom: 10,
+        zoom: 15,
         center: currentLocation
     };
 

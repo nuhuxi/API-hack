@@ -213,3 +213,8 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 	padding: 10px;
 }
 
+
+
+.input-group-btn>.btn:focus{
+	outline:0;
+}
