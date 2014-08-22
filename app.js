@@ -48,7 +48,7 @@ function placeDetailsCallback (place, status){
     console.log (place);
     var placeAddress = place.address_components;
     console.log(placeAddress);
-    console.log(placeAddress[3])
+    console.log(placeAddress[3]);
 
   }
 }
