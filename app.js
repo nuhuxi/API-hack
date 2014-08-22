@@ -54,6 +54,10 @@ function placeDetailsCallback (place, status){
         console.log(placeAddressObject);
         //need to target object with a property types 'locality'
         console.log(placeAddressObject.types[0]= "locality");
+
+        if(placeAddressObject.types[i] == "locality"){
+            alert($(this).placeAddressObject);
+        }
     }
 
   }
