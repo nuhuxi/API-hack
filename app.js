@@ -46,7 +46,9 @@ var marker;
 function placeDetailsCallback (place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     console.log (place);
-    console.log(place.address_components);
+    var placeAddress = place.address_components;
+    console.log(placeAddress);
+
   }
 }
 
