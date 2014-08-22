@@ -50,8 +50,12 @@ function placeDetailsCallback (place, status){
     console.log(placeAddress);
 
     for (var i=0; i<placeAddress.length;i++){
-        console.log(placeAddress[i]);//object within array
+        var placeAddressObject = placeAddress[i];
+        //console.log(placeAddressObject);//object within array
         //console.log(placeAddress[types=locality]);
+        //need to target object with a property types 'locality'
+        console.log(placeAddressObject.types);
+
     }
 
   }
