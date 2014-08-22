@@ -46,10 +46,13 @@ var marker;
 function placeDetailsCallback (place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     console.log (place);
-    var placeAddress = place.address_components;
+    var placeAddress = place.address_components;//an array of address objects
     console.log(placeAddress);
-    console.log(placeAddress[3]);
-    console.log(placeAddress[types=locality]);
+
+    for (var i=0; i<placeAddress.length;i++){
+        console.log(placeAddress[i]);//object within array
+        //console.log(placeAddress[types=locality]);
+    }
 
   }
 }
