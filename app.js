@@ -45,16 +45,14 @@ var marker;
 
 function placeDetailsCallback (place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    console.log (place);
+    //console.log (place);
     var placeAddress = place.address_components;//an array of address objects
-    console.log(placeAddress);
+    //console.log(placeAddress);
 
     for (var i=0; i<placeAddress.length;i++){
         var placeAddressObject = placeAddress[i];//each object in array of address objects
         console.log(placeAddressObject);
         //need to target object with a property types 'locality'
-        //console.log(placeAddressObject.types[0].locality);
-        console.log(placeAddressObject.types);
         console.log(placeAddressObject.types[0]);
     }
 
