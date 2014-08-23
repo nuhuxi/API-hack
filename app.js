@@ -55,8 +55,9 @@ function placeDetailsCallback (place, status){
         //need to target object with a property types 'locality'
 
         if(placeAddressObject.types[i] == "locality"){
-            alert(placeAddressObject.long_name);
-            $('.location').text(placeAddressObject.long_name);
+            //alert(placeAddressObject.long_name);
+            var localityName = $(this).placeAddressObject.long_name;
+            $('.location').text(localityName);
         }
     }
 
