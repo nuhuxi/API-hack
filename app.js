@@ -57,7 +57,7 @@ function placeDetailsCallback (place, status){
             console.log(placeAddressObject);
             var longName = placeAddressObject.long_name;
             $('.results li').append("<div class='location'>"+longName+"</div>");
-            $('.location').text(longName);
+            //$('.location').text(longName);
 
             
             // //console.log(longName);
