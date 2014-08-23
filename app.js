@@ -55,13 +55,16 @@ function placeDetailsCallback (place, status){
 
         if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
             console.log(placeAddressObject);
-            console.log(placeAddressObject.long_name);
 
-            var locationText = $('.location').attr('value');//give location class a value
-            var placeCityArray = [];
             var longName = placeAddressObject.long_name;
-            placeCityArray.push(longName);//each name in an array
-            $('.location').text(placeCityArray[locationText]);
+            console.log(longName);
+            $('.location').text(longName);
+
+            // var locationText = $('.location').attr('value');//give location class a value
+            // var placeCityArray = [];
+            
+            // placeCityArray.push(longName);//each name in an array
+            // $('.location').text(placeCityArray[locationText]);
         }
     }
 
