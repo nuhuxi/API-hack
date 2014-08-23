@@ -59,7 +59,8 @@ function placeDetailsCallback (place, status){
 
             var locationText = $('.location').attr('value');//give location class a value
             var placeCityArray = [];
-            (placeAddressObject.long_name).push(placeCityArray);//each name in an array
+            var longName = placeAddressObject.long_name;
+            longName.push(placeCityArray);//each name in an array
             $('.location').text(placeCityArray[locationText]);
         }
     }
