@@ -41,7 +41,7 @@ var markersOnMap = [];
 var listeningToBounds = false;
 var infowindow;
 var marker;
-
+var localityName;
 
 function placeDetailsCallback (place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -56,8 +56,8 @@ function placeDetailsCallback (place, status){
 
         if(placeAddressObject.types[0] == "locality"){
             //alert(placeAddressObject.long_name);
-            var localityName = placeAddressObject.long_name;
-            $('.location').text(localityName);
+            localityName = placeAddressObject.long_name;
+            //$('.location').text(localityName);
         }
     }
 
@@ -130,7 +130,7 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
+            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+localityName+"</div></li>");
         }
 
 
