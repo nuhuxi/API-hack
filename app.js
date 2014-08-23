@@ -56,6 +56,7 @@ function placeDetailsCallback (place, status){
         if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
             console.log(placeAddressObject);
             var longName = placeAddressObject.long_name;
+            $('.results li').append("<div class='location' value = '"+i+"'>"+placeLocation+"</div>");
             $('.location').text(longName);
 
             
@@ -136,7 +137,7 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location' value = '"+i+"'>"+placeLocation+"</div></li>");
+            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div></li>");
         }
 
 
