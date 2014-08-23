@@ -60,7 +60,7 @@ function placeDetailsCallback (place, status){
             var locationText = $('.location').attr('value');//give location class a value
             var placeCityArray = [];
             (placeAddressObject.long_name).push(placeCityArray);//each name in an array
-            locationText.text(placeCityArray[locationText]);
+            $('.location').text(placeCityArray[locationText]);
         }
     }
 
@@ -133,7 +133,7 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
+            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location' value = '"+i+"'>"+placeLocation+"</div></li>");
         }
 
 
