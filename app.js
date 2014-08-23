@@ -50,12 +50,13 @@ function placeDetailsCallback (place, status){
 
     for (var i=0; i<placeAddress.length;i++){
         var placeAddressObject = placeAddress[i];//each object in array of address objects
-        console.log(placeAddressObject);
+        //console.log(placeAddressObject);
         //need to target object with a property types 'locality'
 
-        if(placeAddressObject.types[0] == "locality"){
+        if(placeAddressObject.types[0] == "locality"){ //if the place address object has type property 'locality'
             //alert(placeAddressObject.long_name);
-            var localityName = placeAddressObject.long_name;
+            return $(this).placeAddressObject;
+            //var localityName = placeAddressObject.long_name;
             //$('.location').text(localityName);
         }
     }
@@ -129,7 +130,7 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+localityName+"</div></li>");
+            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
         }
 
 
