@@ -41,36 +41,28 @@ var markersOnMap = [];
 var listeningToBounds = false;
 var infowindow;
 var marker;
+var longName;
+
 
 function placeDetailsCallback (place, status){
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    //console.log (place);
-    var placeAddress = place.address_components;//an array of address objects
-    //console.log(placeAddress);
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        console.log (place);
+        var placeAddress = place.address_components;//an array of address objects
+        //console.log(placeAddress);
 
-    for (var i=0; i<placeAddress.length;i++){
-        var placeAddressObject = placeAddress[i];//each object in array of address objects
-        //console.log(placeAddressObject);
-        //need to target object with a property types 'locality'
+        for (var i=0; i<placeAddress.length;i++){
+            var placeAddressObject = placeAddress[i];//each object in array of address objects, I.E. "formatted address"
+            //need to target object with a property types 'locality'
 
-        if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
-            console.log(placeAddressObject);
-            var longName = placeAddressObject.long_name;
-            $('.results li').append("<div class='location'>"+longName+"</div>");
-            //$('.location').text(longName);
+            if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
+                console.log(placeAddressObject);
+                longName = placeAddressObject.long_name;
+                //$('.location').text(longName);
 
-            
-            // //console.log(longName);
-            // var locationText = $('.location').attr('value');//give location class a value
-            // var placeCityArray = [];
-            // placeCityArray.push(longName);//each name in an array
-            // $('.location').text(placeCityArray[locationText]);
-        }
-    }
-
-  }
-}
-
+            }//if statement ends
+        }//for statement ends
+    }// if statement ends
+}// callback ends
 
 function callback(results, status){
     //after I send my request, handle the results
@@ -133,7 +125,7 @@ function callback(results, status){
 
         if((!photoForPlace) || (photoForPlace === undefined)){
             //show no picture 
-            $('.results').append("<li><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+placeLocation+"</div></li>");
+            $('.results').append("<li><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+longName+"</div></li>");
         }
 
         else if (photoForPlace) {
