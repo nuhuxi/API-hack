@@ -41,7 +41,6 @@ var markersOnMap = [];
 var listeningToBounds = false;
 var infowindow;
 var marker;
-var localityName;
 
 function placeDetailsCallback (place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -56,7 +55,7 @@ function placeDetailsCallback (place, status){
 
         if(placeAddressObject.types[0] == "locality"){
             //alert(placeAddressObject.long_name);
-            localityName = placeAddressObject.long_name;
+            var localityName = placeAddressObject.long_name;
             //$('.location').text(localityName);
         }
     }
