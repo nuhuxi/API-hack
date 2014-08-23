@@ -57,14 +57,13 @@ function placeDetailsCallback (place, status){
             console.log(placeAddressObject);
 
             var longName = placeAddressObject.long_name;
-            console.log(longName);
-            $('.location').text(longName);
+            //console.log(longName);
+            //$('.location').text(longName);
 
-            // var locationText = $('.location').attr('value');//give location class a value
-            // var placeCityArray = [];
-            
-            // placeCityArray.push(longName);//each name in an array
-            // $('.location').text(placeCityArray[locationText]);
+            var locationText = $('.location').attr('value');//give location class a value
+            var placeCityArray = [];
+            placeCityArray.push(longName);//each name in an array
+            $('.location').text(placeCityArray[locationText]);
         }
     }
 
