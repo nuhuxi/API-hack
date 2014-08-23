@@ -55,7 +55,9 @@ function placeDetailsCallback (place, status){
 
         if(placeAddressObject.types[0] == "locality"){ //if the place address object has type property 'locality'
             //alert(placeAddressObject.long_name);
-            return $(this).placeAddressObject;
+            
+            console.log($(this).placeAddressObject);
+
             //var localityName = placeAddressObject.long_name;
             //$('.location').text(localityName);
         }
