@@ -57,9 +57,9 @@ function placeDetailsCallback (place, status){
 
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
                 //console.log(placeAddressObject);
-                //var longName = placeAddressObject.long_name;
-                //console.log(longName);
-                cityArray.push(placeAddressObject);
+                var longName = placeAddressObject.long_name;
+                console.log(longName);
+                cityArray.push(longName);
                 //$('.location').text(longName);
 
             }//if statement ends
