@@ -41,6 +41,7 @@ var markersOnMap = [];
 var listeningToBounds = false;
 var infowindow;
 var marker;
+var cityArray = [];
 
 
 function placeDetailsCallback (place, status){
@@ -53,11 +54,11 @@ function placeDetailsCallback (place, status){
             var placeAddressObject = placeAddress[i];//each object in array of address objects
             //need to target object with a property types 'locality'
 
+
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
                 //console.log(placeAddressObject);
                 //var longName = placeAddressObject.long_name;
                 //console.log(longName);
-                var cityArray = [];
                 cityArray.push(placeAddressObject);
                 //$('.location').text(longName);
 
