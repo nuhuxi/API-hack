@@ -57,7 +57,7 @@ function placeDetailsCallback (place, status){
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
                 //console.log(placeAddressObject);
                 console.log(placeAddressObject.long_name);
-                //longName = placeAddressObject.long_name;
+                longName = placeAddressObject.long_name;
                 //$('.location').text(longName);
 
             }//if statement ends
@@ -91,7 +91,7 @@ function callback(results, status){
        
         var photosArray = results[i].photos; //access the photos of each place
         var placeName = results[i].name;
-        var placeLocation = results[i].vicinity;
+        //var placeLocation = results[i].vicinity;
 
         var placeReference = results[i].place_id;
 
