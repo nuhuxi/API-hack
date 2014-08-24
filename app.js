@@ -138,10 +138,9 @@ function callback(results, status){
             $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+cityArray[i]+"</div></li>");
 
             //resultValue = $('.results').find('li').attr('value');
-            //$('.location').text(cityArray[resultValue]);
         }
 
-        $('.results').find('li').attr('value', 'i');
+        $('.results').find('li').attr('value', i);
 
 
         var marker = new google.maps.Marker({ //marker for the search results
