@@ -42,6 +42,7 @@ var listeningToBounds = false;
 var infowindow;
 var marker;
 var cityArray = [];
+var resultValue;
 
 
 function placeDetailsCallback (place, status){
@@ -61,6 +62,9 @@ function placeDetailsCallback (place, status){
                 console.log(longName);
                 cityArray.push(longName);
                 //$('.location').text(longName);
+
+                resultValue = $('.results').find('li').attr('value');
+                $('.location').text(cityArray[resultValue]);
 
             }//if statement ends
         }//for statement ends
@@ -132,13 +136,10 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            //var resultValue = $('.results li').attr('value', i );
-            //var resultValue = $('.results li').attr('value');
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
 
-            var resultValue = $('.results').find('li').attr('value');
+            resultValue = $('.results').find('li').attr('value');
             $('.location').text(cityArray[resultValue]);
-            //$('.results li').append("<div class='location'>'"+cityArray[resultValue]+"'</div>");
         }
 
 
