@@ -131,16 +131,15 @@ function callback(results, status){
 
         if((!photoForPlace) || (photoForPlace === undefined)){
             //show no picture 
-            $('.results').append("<li><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div></li>");
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+cityArray[i]+"</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+cityArray[i]+"</div></li>");
 
             //resultValue = $('.results').find('li').attr('value');
+            //$('.location').text(cityArray[resultValue]);
         }
-
-        $('.results').find('li').attr('value', i);
 
 
         var marker = new google.maps.Marker({ //marker for the search results
