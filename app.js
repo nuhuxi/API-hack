@@ -42,7 +42,6 @@ var listeningToBounds = false;
 var infowindow;
 var marker;
 var cityArray = [];
-var resultValue;
 var locationText;
 
 
@@ -64,6 +63,9 @@ function placeDetailsCallback (place, status){
                 cityArray.push(longName);
                 console.log(cityArray);
                 //$('.location').text(longName);
+
+                
+                locationText = $('.location').text(cityArray[resultValue]);
 
             }//if statement ends
         }//for statement ends
@@ -136,11 +138,9 @@ function callback(results, status){
 
         else if (photoForPlace) {
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div></li>");
-
-            //resultValue = $('.results').find('li').attr('value');
-            //$('.location').text(cityArray[resultValue]);
-            console.log(cityArray[i]);
         }
+
+        var resultValue = $('.results').find('li').attr('value');
 
 
         var marker = new google.maps.Marker({ //marker for the search results
