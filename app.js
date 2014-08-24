@@ -46,17 +46,18 @@ var longName;
 
 function placeDetailsCallback (place, status){
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        console.log (place);
+        //console.log (place);
         var placeAddress = place.address_components;//an array of address objects
-        console.log(placeAddress);
+        //console.log(placeAddress);
 
         for (var i=0; i<placeAddress.length;i++){
-            var placeAddressObject = placeAddress[i];//each object in array of address objects, I.E. "formatted address"
+            var placeAddressObject = placeAddress[i];//each object in array of address objects
             //need to target object with a property types 'locality'
 
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
                 //console.log(placeAddressObject);
-                longName = placeAddressObject.long_name;
+                console.log(placeAddressObject.long_name);
+                //longName = placeAddressObject.long_name;
                 //$('.location').text(longName);
 
             }//if statement ends
