@@ -135,10 +135,11 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+cityArray[i]+"</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div></li>");
 
             //resultValue = $('.results').find('li').attr('value');
             //$('.location').text(cityArray[resultValue]);
+            console.log(cityArray[i]);
         }
 
 
