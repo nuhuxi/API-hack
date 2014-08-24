@@ -43,6 +43,7 @@ var infowindow;
 var marker;
 var cityArray = [];
 var resultValue;
+var locationText;
 
 
 function placeDetailsCallback (place, status){
@@ -61,10 +62,11 @@ function placeDetailsCallback (place, status){
                 var longName = placeAddressObject.long_name;
                 console.log(longName);
                 cityArray.push(longName);
+                console.log(cityArray);
                 //$('.location').text(longName);
 
                 resultValue = $('.results').find('li').attr('value');
-                $('.location').text(cityArray[resultValue]);
+                locationText = $('.location').text(cityArray[resultValue]);
 
             }//if statement ends
         }//for statement ends
@@ -136,7 +138,7 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+locationText+"</div></li>");
 
             resultValue = $('.results').find('li').attr('value');
             $('.location').text(cityArray[resultValue]);
