@@ -134,7 +134,10 @@ function callback(results, status){
         else if (photoForPlace) {
             //var resultValue = $('.results li').attr('value', i );
             //var resultValue = $('.results li').attr('value');
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+cityArray[$('.results li').attr('value')]+"</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div></li>");
+
+            var resultValue = $('.results li').attr('value');
+            $('.results li').append("<div class='location'>"+cityArray[resultValue]+"</div>");
         }
 
 
