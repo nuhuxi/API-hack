@@ -136,7 +136,7 @@ function callback(results, status){
             //var resultValue = $('.results li').attr('value');
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
 
-            var resultValue = $('.results li').attr('value');
+            var resultValue = $('.results').find('li').attr('value');
             $('.location').text(cityArray[resultValue]);
             //$('.results li').append("<div class='location'>'"+cityArray[resultValue]+"'</div>");
         }
