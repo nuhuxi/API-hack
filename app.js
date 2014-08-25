@@ -71,10 +71,12 @@ function placeDetailsCallbackForPlace (placeID){
                 //console.log(cityArray);
                 var resultValue = $('.results').find('li[value="'+placeValue+'"]');
                 resultValue.find('.location').text(longName);
+                console.log (placeValue);
+                console.log(resultValue.find('.location'));
                 //var locationText= $('.location').text(cityArray[resultValue]);
 
                 //var locationText = $('.location').text(longName);
-
+                break;
             }//if statement ends
 
         }//for statement ends
@@ -155,9 +157,9 @@ function callback(results, status){
         }
         
 
+        var placeDetailsCallbackFor = placeDetailsCallbackForPlace(i);
 
-
-        service.getDetails(placeDetailsRequest, placeDetailsCallbackForPlace(i));
+        service.getDetails(placeDetailsRequest, placeDetailsCallbackFor);
 
         var marker = new google.maps.Marker({ //marker for the search results
         position: results[i].geometry.location,
