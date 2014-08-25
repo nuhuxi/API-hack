@@ -162,7 +162,7 @@ function callback(results, status){
         {
             var placePlace = placeId;
             var actionPlace = function(){
-                placeDetailsCallbackForPlace(placePlace);
+                placeDetailsCallbackForPlace(placePlace)();
             };
             return actionPlace;
 
