@@ -66,7 +66,7 @@ function placeDetailsCallback (place, status){
                 //cityArray.push(longName);
                 //console.log(cityArray);
                 //var resultValue = $('.results').find('li').attr('value');
-                //var locationText= $('.location').text(cityArray[resultValue]);
+                //.form-control:focusvar locationText= $('.location').text(cityArray[resultValue]);
 
                 var locationText = $('.location').text(longName);
 
@@ -136,7 +136,7 @@ function callback(results, status){
 
         if((!photoForPlace) || (photoForPlace === undefined)){
             //show no picture 
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
         }
 
         else if (photoForPlace) {

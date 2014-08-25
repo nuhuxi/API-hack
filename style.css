@@ -218,3 +218,10 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 .input-group-btn>.btn:focus{
 	outline:0;
 }
+
+.form-control:focus{
+	border-color: none;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
