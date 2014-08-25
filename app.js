@@ -160,9 +160,10 @@ function callback(results, status){
         
         var delayedLookup = function(placeId)
         {
+            var placePlace = placeId;
             var action = function(){
-                placeDetailsCallbackForPlace(placeId);
-            }
+                placeDetailsCallbackForPlace(placePlace);
+            };
             return action;
 
         }
