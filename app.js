@@ -163,6 +163,7 @@ function callback(results, status){
             var placePlace = placeId;
             var actionPlace = function(){
                 var callback = placeDetailsCallbackForPlace(placePlace);
+                console.log (placeDetailsRequest);
                 service.getDetails(placeDetailsRequest, callback);
             };
             return actionPlace;
