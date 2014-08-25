@@ -167,7 +167,8 @@ function callback(results, status){
             return action;
 
         }
-       window.setTimeout(delayedLookup(i), i*200);
+        var action = delayedLookup(i);
+       window.setTimeout(action, i*200);
        
         
 
