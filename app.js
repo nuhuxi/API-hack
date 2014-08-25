@@ -44,7 +44,11 @@ var marker;
 var cityArray = [];
 
 
-function placeDetailsCallback (place, status){
+function placeDetailsCallbackForPlace (placeID){
+    var placeValue = placeID;
+
+    var  placeDetailsCallback = function (place, status){
+
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         //console.log (place);
         var placeAddress = place.address_components;//an array of address objects
@@ -60,20 +64,26 @@ function placeDetailsCallback (place, status){
 
 
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
-                //console.log(placeAddressObject);
+                console.log(placeAddressObject);
                 var longName = placeAddressObject.long_name;
                 console.log(longName);
                 //cityArray.push(longName);
                 //console.log(cityArray);
-                var resultValue = $('.results').find('li[value="'+i+'"]');
+                var resultValue = $('.results').find('li[value="'+placeValue+'"]');
                 resultValue.find('.location').text(longName);
                 //var locationText= $('.location').text(cityArray[resultValue]);
 
                 //var locationText = $('.location').text(longName);
 
             }//if statement ends
+
         }//for statement ends
     }// if statement ends
+
+    };
+
+    return placeDetailsCallback;
+
 }// callback ends
 
 function callback(results, status){
@@ -144,7 +154,10 @@ function callback(results, status){
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
         }
         
-        service.getDetails(placeDetailsRequest, placeDetailsCallback);
+
+
+
+        service.getDetails(placeDetailsRequest, placeDetailsCallbackForPlace(i));
 
         var marker = new google.maps.Marker({ //marker for the search results
         position: results[i].geometry.location,
