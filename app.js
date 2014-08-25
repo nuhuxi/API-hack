@@ -168,7 +168,8 @@ function callback(results, status){
 
         }
         var action = delayedLookup(i);
-       window.setTimeout(action, i*200);
+       //window.setTimeout(action, i*200);
+       action();
        
         
 
