@@ -161,15 +161,15 @@ function callback(results, status){
         var delayedLookup = function(placeId)
         {
             var placePlace = placeId;
-            var action = function(){
+            var actionPlace = function(){
                 placeDetailsCallbackForPlace(placePlace);
             };
-            return action;
+            return actionPlace;
 
         }
-        var action = delayedLookup(i);
+        var actionPlace = delayedLookup(i);
        //window.setTimeout(action, i*200);
-       action();
+       actionPlace();
        
         
 
