@@ -65,10 +65,11 @@ function placeDetailsCallback (place, status){
                 console.log(longName);
                 //cityArray.push(longName);
                 //console.log(cityArray);
-                //var resultValue = $('.results').find('li').attr('value');
-                //.form-control:focusvar locationText= $('.location').text(cityArray[resultValue]);
+                var resultValue = $('.results').find('li[value="'+i+'"]');
+                resultValue.find('.location').text(longName);
+                //var locationText= $('.location').text(cityArray[resultValue]);
 
-                var locationText = $('.location').text(longName);
+                //var locationText = $('.location').text(longName);
 
             }//if statement ends
         }//for statement ends
@@ -110,7 +111,7 @@ function callback(results, status){
         };
 
 
-        service.getDetails(placeDetailsRequest, placeDetailsCallback);
+        
 
         var photoForPlace = false;
 
@@ -142,7 +143,8 @@ function callback(results, status){
         else if (photoForPlace) {
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
         }
-
+        
+        service.getDetails(placeDetailsRequest, placeDetailsCallback);
 
         var marker = new google.maps.Marker({ //marker for the search results
         position: results[i].geometry.location,
