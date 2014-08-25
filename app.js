@@ -157,9 +157,11 @@ function callback(results, status){
         console.log("Added item "+ i);
 
         
-
+        var placeId = i;
+       window.setTimeout(function(){
+             service.getDetails(placeDetailsRequest, placeDetailsCallbackForPlace(placeId));
+       }, i*200);
        
-        service.getDetails(placeDetailsRequest, placeDetailsCallbackForPlace(i));
         
 
         
