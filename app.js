@@ -157,10 +157,16 @@ function callback(results, status){
         console.log("Added item "+ i);
 
         
-        var placeId = i;
-       window.setTimeout(function(){
-             service.getDetails(placeDetailsRequest, placeDetailsCallbackForPlace(placeId));
-       }, i*200);
+        
+        var delayedLookup = function(placeId)
+        {
+            var action = function(){
+                placeDetailsCallbackForPlace(placeId);
+            }
+            return action;
+
+        }
+       window.setTimeout(delayedLookup(i), i*200);
        
         
 
