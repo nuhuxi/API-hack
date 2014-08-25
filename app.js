@@ -51,7 +51,7 @@ function placeDetailsCallback (place, status){
         //console.log(placeAddress);
 
         cityArray = [];
-        
+
         for (var i=0; i<placeAddress.length;i++){
             var placeAddressObject = placeAddress[i];//each object in array of address objects
             //need to target object with a property types 'locality'
@@ -63,13 +63,13 @@ function placeDetailsCallback (place, status){
                 //console.log(placeAddressObject);
                 var longName = placeAddressObject.long_name;
                 console.log(longName);
-                cityArray.push(longName);
-                console.log(cityArray);
-                //$('.location').text(longName);
+                //cityArray.push(longName);
+                //console.log(cityArray);
+            
 
                 //var resultValue = $('.results').find('li').attr('value');
 
-                var locationText = $('.location').text(cityArray);
+                var locationText = $('.location').text(longName);
 
             }//if statement ends
         }//for statement ends
@@ -141,7 +141,7 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+locationText+"</div></li>");
         }
 
 
