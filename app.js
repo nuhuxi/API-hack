@@ -156,10 +156,10 @@ function callback(results, status){
         
         console.log("Added item "+ i);
 
-        var placeDetailsCallback = placeDetailsCallbackForPlace(i);
+        
 
        
-        service.getDetails(placeDetailsRequest, placeDetailsCallback);
+        service.getDetails(placeDetailsRequest, placeDetailsCallbackForPlace(i));
         
 
         
