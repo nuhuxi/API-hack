@@ -55,6 +55,7 @@ function placeDetailsCallbackForPlace (placeID){
         //console.log(placeAddress);
 
         cityArray = [];
+        var longName = false;
 
         for (var i=0; i<placeAddress.length;i++){
             var placeAddressObject = placeAddress[i];//each object in array of address objects
@@ -65,21 +66,25 @@ function placeDetailsCallbackForPlace (placeID){
 
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
                 console.log(placeAddressObject);
-                var longName = placeAddressObject.long_name;
+
+                longName = placeAddressObject.long_name;
                 console.log(longName);
                 //cityArray.push(longName);
                 //console.log(cityArray);
                 var resultValue = $('.results').find('li[value="'+placeValue+'"]');
                 resultValue.find('.location').text(longName);
                 console.log (placeValue);
-                console.log(resultValue.find('.location'));
                 //var locationText= $('.location').text(cityArray[resultValue]);
-
-                //var locationText = $('.location').text(longName);
                 break;
+
             }//if statement ends
 
+            else if (!longName){
+                console.log (placeAddressObject);
+            }
+
         }//for statement ends
+
     }// if statement ends
 
     };
@@ -116,14 +121,6 @@ function callback(results, status){
         var placeName = results[i].name;
         //var placeLocation = results[i].vicinity;
 
-        var placeReference = results[i].place_id;
-
-        var placeDetailsRequest = {
-            placeId: placeReference
-        };
-
-
-        
 
         var photoForPlace = false;
 
@@ -153,25 +150,28 @@ function callback(results, status){
         } else {
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
         }
-        
-        console.log("Added item "+ i);
+    
 
+
+
+
+        var placeReference = results[i].place_id;
+
+        var placeDetailsRequest = {
+            placeId: placeReference
+        };
         
-        
-        var delayedLookup = function(request, placeId)
-        {
-            var placePlace = placeId;
-            var placeRequest = request;
+        var delayedLookup = function(placeRequest, placeId){
+
             var actionPlace = function(){
-                var callback = placeDetailsCallbackForPlace(placePlace);
-                console.log (placeDetailsRequest);
+                var callback = placeDetailsCallbackForPlace(placeId);
                 service.getDetails(placeRequest, callback);
             };
             return actionPlace;
 
-        }
+        };
         var actionPlace = delayedLookup(placeDetailsRequest, i);
-       window.setTimeout(actionPlace, i*200);
+        window.setTimeout(actionPlace, i*200);
        
        
         
