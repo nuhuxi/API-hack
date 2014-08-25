@@ -158,7 +158,11 @@ function callback(results, status){
 
         var placeDetailsCallback = placeDetailsCallbackForPlace(i);
 
-        service.getDetails(placeDetailsRequest, placeDetailsCallback);
+        window.setTimeout(function(){
+                service.getDetails(placeDetailsRequest, placeDetailsCallback);
+        }, i*500);
+
+        
 
         var marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
