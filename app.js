@@ -65,9 +65,8 @@ function placeDetailsCallback (place, status){
                 console.log(longName);
                 //cityArray.push(longName);
                 //console.log(cityArray);
-            
-
                 //var resultValue = $('.results').find('li').attr('value');
+                //var locationText= $('.location').text(cityArray[resultValue]);
 
                 var locationText = $('.location').text(longName);
 
