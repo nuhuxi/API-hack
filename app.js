@@ -150,22 +150,21 @@ function callback(results, status){
         if((!photoForPlace) || (photoForPlace === undefined)){
             //show no picture 
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
-        }
-
-        else if (photoForPlace) {
+        } else {
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
         }
         
+        console.log("Added item "+ i);
 
-        var placeDetailsCallbackFor = placeDetailsCallbackForPlace(i);
+        var placeDetailsCallback = placeDetailsCallbackForPlace(i);
 
-        service.getDetails(placeDetailsRequest, placeDetailsCallbackFor);
+        service.getDetails(placeDetailsRequest, placeDetailsCallback);
 
         var marker = new google.maps.Marker({ //marker for the search results
-        position: results[i].geometry.location,
-        map: map,
-        name: results[i].name
-        //icon: eachPhotoinArray
+            position: results[i].geometry.location,
+            map: map,
+            name: results[i].name
+            //icon: eachPhotoinArray
         });
 
         markersOnMap.push(marker);
