@@ -69,7 +69,7 @@ function placeDetailsCallback (place, status){
 
                 //var resultValue = $('.results').find('li').attr('value');
 
-                var locationText = $('.location').text(longName);
+                //var locationText = $('.location').text(longName);
 
             }//if statement ends
         }//for statement ends
@@ -141,7 +141,7 @@ function callback(results, status){
         }
 
         else if (photoForPlace) {
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+locationText+"</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>"+longName+"</div></li>");
         }
 
 
