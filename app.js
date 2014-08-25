@@ -50,11 +50,13 @@ function placeDetailsCallback (place, status){
         var placeAddress = place.address_components;//an array of address objects
         //console.log(placeAddress);
 
+        cityArray = [];
+        
         for (var i=0; i<placeAddress.length;i++){
             var placeAddressObject = placeAddress[i];//each object in array of address objects
             //need to target object with a property types 'locality'
 
-            cityArray = [];
+            
 
 
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
