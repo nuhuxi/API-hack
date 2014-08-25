@@ -54,7 +54,9 @@ function placeDetailsCallback (place, status){
             var placeAddressObject = placeAddress[i];//each object in array of address objects
             //need to target object with a property types 'locality'
 
+            cityArray = empty;
 
+            
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
                 //console.log(placeAddressObject);
                 var longName = placeAddressObject.long_name;
