@@ -161,10 +161,11 @@ function callback(results, status){
         var delayedLookup = function(placeId)
         {
             var placePlace = placeId;
+            var placeRequest = placeDetailsRequest;
             var actionPlace = function(){
                 var callback = placeDetailsCallbackForPlace(placePlace);
                 console.log (placeDetailsRequest);
-                service.getDetails(placeDetailsRequest, callback);
+                service.getDetails(placeRequest, callback);
             };
             return actionPlace;
 
