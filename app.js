@@ -162,14 +162,15 @@ function callback(results, status){
         {
             var placePlace = placeId;
             var actionPlace = function(){
-                placeDetailsCallbackForPlace(placePlace)();
+                var callback = placeDetailsCallbackForPlace(placePlace);
+                service.getDetails(placeDetailsRequest, callback);
             };
             return actionPlace;
 
         }
         var actionPlace = delayedLookup(i);
-       //window.setTimeout(action, i*200);
-       actionPlace();
+       window.setTimeout(actionPlace, i*200);
+       
        
         
 
