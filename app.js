@@ -158,10 +158,10 @@ function callback(results, status){
 
         
         
-        var delayedLookup = function(placeId)
+        var delayedLookup = function(request, placeId)
         {
             var placePlace = placeId;
-            var placeRequest = placeDetailsRequest;
+            var placeRequest = request;
             var actionPlace = function(){
                 var callback = placeDetailsCallbackForPlace(placePlace);
                 console.log (placeDetailsRequest);
@@ -170,7 +170,7 @@ function callback(results, status){
             return actionPlace;
 
         }
-        var actionPlace = delayedLookup(i);
+        var actionPlace = delayedLookup(placeDetailsRequest, i);
        window.setTimeout(actionPlace, i*200);
        
        
