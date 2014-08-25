@@ -158,9 +158,9 @@ function callback(results, status){
 
         var placeDetailsCallback = placeDetailsCallbackForPlace(i);
 
-        window.setTimeout(function(){
-                service.getDetails(placeDetailsRequest, placeDetailsCallback);
-        }, i*500);
+       
+        service.getDetails(placeDetailsRequest, placeDetailsCallback);
+        
 
         
 
