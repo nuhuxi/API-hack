@@ -65,7 +65,7 @@ function placeDetailsCallbackForPlace (placeID){
 
 
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
-                console.log(placeAddressObject);
+                //console.log(placeAddressObject);
 
                 longName = placeAddressObject.long_name;
                 console.log(longName);
@@ -73,7 +73,7 @@ function placeDetailsCallbackForPlace (placeID){
                 //console.log(cityArray);
                 var resultValue = $('.results').find('li[value="'+placeValue+'"]');
                 resultValue.find('.location').text(longName);
-                console.log (placeValue);
+                //console.log (placeValue);
                 //var locationText= $('.location').text(cityArray[resultValue]);
                 break;
 
