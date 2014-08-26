@@ -56,7 +56,7 @@ function placeDetailsCallbackForPlace (placeID){
 
         cityArray = [];
         var longName = false;
-        var resultValue = $('.results').find('li[value="'+placeValue+'"]');
+        
 
         for (var i=0; i<placeAddress.length;i++){
             var placeAddressObject = placeAddress[i];//each object in array of address objects
@@ -73,6 +73,7 @@ function placeDetailsCallbackForPlace (placeID){
                 //cityArray.push(longName);
                 //console.log(cityArray);
                 
+                var resultValue = $('.results').find('li[value="'+placeValue+'"]');
                 resultValue.find('.location').text(longName);
                 //console.log (placeValue);
                 //var locationText= $('.location').text(cityArray[resultValue]);
@@ -83,7 +84,7 @@ function placeDetailsCallbackForPlace (placeID){
             else if (!longName){
                 //console.log (placeAddressObject);
                 console.log ('No Long Name');
-                resultValue.find('.location').text("No City");
+                $('.location').text("No City");
             }
 
         }//for statement ends
