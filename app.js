@@ -84,7 +84,7 @@ function placeDetailsCallbackForPlace (placeID){
             else if (!longName){
                 //console.log (placeAddressObject);
                 console.log ('No Long Name');
-                $('.location').text("No City");
+                //$('.location').text("No City");
             }
 
         }//for statement ends
@@ -164,18 +164,22 @@ function callback(results, status){
         var placeDetailsRequest = {
             placeId: placeReference
         };
+
+        service.getDetails(placeDetailsRequest, callback);
+
         
-        var delayedLookup = function(placeRequest, placeId){
+        var delayedLookup = function(placeRequest, placeId){ //function using placeDetailsRequest, i
 
             var actionPlace = function(){
-                var callback = placeDetailsCallbackForPlace(placeId);
-                service.getDetails(placeRequest, callback);
+                var callback = placeDetailsCallbackForPlace(placeId); //placeDetailsCallbackForPlace(for each result)
+                service.getDetails(placeRequest, callback); //placeDetailsRequest, callback function for each result [i]
             };
-            return actionPlace;
+            return actionPlace; //what does this do?
 
         };
-        var actionPlace = delayedLookup(placeDetailsRequest, i);
-        window.setTimeout(actionPlace, i*200);
+
+        var actionPlace = delayedLookup(placeDetailsRequest, i); //assigning parameters for function
+        window.setTimeout(actionPlace, i*200); //run actionPlace function AFTER assigning parameters
     
 
         
