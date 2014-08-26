@@ -82,7 +82,7 @@ function placeDetailsCallbackForPlace (placeID){
             else if (!longName){
                 //console.log (placeAddressObject);
                 console.log ('No Long Name');
-                ($('.results').find('li[value="'+placeValue+'"]')).find('.location').text("No City Found");
+                $('.location').text("No City Found");
             }
 
         }//for statement ends
