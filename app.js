@@ -81,6 +81,7 @@ function placeDetailsCallbackForPlace (placeID){
 
             else if (!longName){
                 console.log (placeAddressObject);
+                ($('.results').find('li[value="'+placeValue+'"]')).find('.location').text("No City Found");
             }
 
         }//for statement ends
@@ -172,9 +173,7 @@ function callback(results, status){
         };
         var actionPlace = delayedLookup(placeDetailsRequest, i);
         window.setTimeout(actionPlace, i*200);
-       
-       
-        
+    
 
         
 
