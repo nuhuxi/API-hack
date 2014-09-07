@@ -141,6 +141,13 @@ function callback(results, status){
                 minWidth:230,
                 maxWidth:350
             });
+
+            var miniPhoto = photosArray[0].getUrl({
+                minHeight: 20,
+                maxHeight: 20,
+                minWidth: 20,
+                maxWidth: 40
+            });
         }
 
 
@@ -195,7 +202,7 @@ function callback(results, status){
             map: map,
             name: results[i].name,
             //icon: eachPhotoinArray
-            icon: 'http://i.stack.imgur.com/KOh5X.png'
+            //icon: 'http://i.stack.imgur.com/KOh5X.png'
         });
 
         markersOnMap.push(marker);
