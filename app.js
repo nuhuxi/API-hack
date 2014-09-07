@@ -150,7 +150,7 @@ function callback(results, status){
             //show no picture 
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
         } else {
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>'Location'</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>Location</div></li>");
         }
     
 
