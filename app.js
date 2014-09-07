@@ -97,8 +97,6 @@ function placeDetailsCallbackForPlace (placeID){
 
 }// callback ends
 
-
-
 function callback(results, status){
     //after I send my request, handle the results
     if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
@@ -115,7 +113,7 @@ function callback(results, status){
     markersOnMap = [];
 
 
-    $('.results').empty();
+    //$('.results').empty();
     //$('.right-scroll').hide();
 
 
@@ -170,18 +168,18 @@ function callback(results, status){
         service.getDetails(placeDetailsRequest, callback);
 
         
-        // var delayedLookup = function(placeRequest, placeId){ //function using placeDetailsRequest, i
+        var delayedLookup = function(placeRequest, placeId){ //function using placeDetailsRequest, i
 
-        //     var actionPlace = function(){
-        //         var callback = placeDetailsCallbackForPlace(placeId); //placeDetailsCallbackForPlace(for each result)
-        //         service.getDetails(placeRequest, callback); //placeDetailsRequest, callback function for each result [i]
-        //     };
-        //     return actionPlace; //what does this do?
+            var actionPlace = function(){
+                var callback = placeDetailsCallbackForPlace(placeId); //placeDetailsCallbackForPlace(for each result)
+                service.getDetails(placeRequest, callback); //placeDetailsRequest, callback function for each result [i]
+            };
+            return actionPlace; //what does this do?
 
-        // };
+        };
 
-        // var actionPlace = delayedLookup(placeDetailsRequest, i); //assigning parameters for function
-        // window.setTimeout(actionPlace, i*200); //run actionPlace function AFTER assigning parameters
+        var actionPlace = delayedLookup(placeDetailsRequest, i); //assigning parameters for function
+        window.setTimeout(actionPlace, i*200); //run actionPlace function AFTER assigning parameters
     
 
         
