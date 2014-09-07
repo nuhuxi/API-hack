@@ -269,7 +269,8 @@ function initialize(){
     var markerCurrent = new google.maps.Marker({
     position: currentLocation,
     map: map,
-    icon: new google.maps.MarkerImage('https://maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',new google.maps.Size(22,22),new google.maps.Point(0,18),new google.maps.Point(11,11)),
+    //icon: new google.maps.MarkerImage('https://maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',new google.maps.Size(22,22),new google.maps.Point(0,18),new google.maps.Point(11,11)),
+    icon:'http://icons.iconarchive.com/icons/pixelkit/gentle-edges/128/Location-Map-icon.png'
     });
 
     infowindow = new google.maps.InfoWindow();
