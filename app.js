@@ -44,58 +44,58 @@ var marker;
 var cityArray = [];
 
 
-function placeDetailsCallbackForPlace (placeID){
-    var placeValue = placeID;
+// function placeDetailsCallbackForPlace (placeID){
+//     var placeValue = placeID;
 
-    var  placeDetailsCallback = function (place, status){
+//     var  placeDetailsCallback = function (place, status){
 
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-        //console.log (place);
-        var placeAddress = place.address_components;//an array of address objects
-        //console.log(placeAddress);
+//     if (status == google.maps.places.PlacesServiceStatus.OK) {
+//         //console.log (place);
+//         var placeAddress = place.address_components;//an array of address objects
+//         //console.log(placeAddress);
 
-        cityArray = [];
-        var longName = false;
+//         cityArray = [];
+//         var longName = false;
         
 
-        for (var i=0; i<placeAddress.length;i++){
-            var placeAddressObject = placeAddress[i];//each object in array of address objects
-            //need to target object with a property types 'locality'
+//         for (var i=0; i<placeAddress.length;i++){
+//             var placeAddressObject = placeAddress[i];//each object in array of address objects
+//             //need to target object with a property types 'locality'
 
             
 
 
-            if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
-                //console.log(placeAddressObject);
+//             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
+//                 //console.log(placeAddressObject);
 
-                longName = placeAddressObject.long_name;
-                console.log(longName);
-                //cityArray.push(longName);
-                //console.log(cityArray);
+//                 longName = placeAddressObject.long_name;
+//                 console.log(longName);
+//                 //cityArray.push(longName);
+//                 //console.log(cityArray);
                 
-                var resultValue = $('.results').find('li[value="'+placeValue+'"]');
-                resultValue.find('.location').text(longName);
-                //console.log (placeValue);
-                //var locationText= $('.location').text(cityArray[resultValue]);
-                break;
+//                 var resultValue = $('.results').find('li[value="'+placeValue+'"]');
+//                 resultValue.find('.location').text(longName);
+//                 //console.log (placeValue);
+//                 //var locationText= $('.location').text(cityArray[resultValue]);
+//                 break;
 
-            }//if statement ends
+//             }//if statement ends
 
-            else if (!longName){
-                //console.log (placeAddressObject);
-                console.log ('No Long Name');
-                //$('.location').text("No City");
-            }
+//             else if (!longName){
+//                 //console.log (placeAddressObject);
+//                 console.log ('No Long Name');
+//                 //$('.location').text("No City");
+//             }
 
-        }//for statement ends
+//         }//for statement ends
 
-    }// if statement ends
+//     }// if statement ends
 
-    };
+//     };
 
-    return placeDetailsCallback;
+//     return placeDetailsCallback;
 
-}// callback ends
+//}// callback ends
 
 function callback(results, status){
     //after I send my request, handle the results
@@ -113,7 +113,7 @@ function callback(results, status){
     markersOnMap = [];
 
 
-    //$('.results').empty();
+    $('.results').empty();
     //$('.right-scroll').hide();
 
 
@@ -168,18 +168,18 @@ function callback(results, status){
         service.getDetails(placeDetailsRequest, callback);
 
         
-        var delayedLookup = function(placeRequest, placeId){ //function using placeDetailsRequest, i
+        // var delayedLookup = function(placeRequest, placeId){ //function using placeDetailsRequest, i
 
-            var actionPlace = function(){
-                var callback = placeDetailsCallbackForPlace(placeId); //placeDetailsCallbackForPlace(for each result)
-                service.getDetails(placeRequest, callback); //placeDetailsRequest, callback function for each result [i]
-            };
-            return actionPlace; //what does this do?
+        //     var actionPlace = function(){
+        //         var callback = placeDetailsCallbackForPlace(placeId); //placeDetailsCallbackForPlace(for each result)
+        //         service.getDetails(placeRequest, callback); //placeDetailsRequest, callback function for each result [i]
+        //     };
+        //     return actionPlace; //what does this do?
 
-        };
+        // };
 
-        var actionPlace = delayedLookup(placeDetailsRequest, i); //assigning parameters for function
-        window.setTimeout(actionPlace, i*200); //run actionPlace function AFTER assigning parameters
+        // var actionPlace = delayedLookup(placeDetailsRequest, i); //assigning parameters for function
+        // window.setTimeout(actionPlace, i*200); //run actionPlace function AFTER assigning parameters
     
 
         
