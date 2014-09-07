@@ -193,8 +193,9 @@ function callback(results, status){
         var marker = new google.maps.Marker({ //marker for the search results
             position: results[i].geometry.location,
             map: map,
-            name: results[i].name
+            name: results[i].name,
             //icon: eachPhotoinArray
+            icon: 'http://i.stack.imgur.com/KOh5X.png'
         });
 
         markersOnMap.push(marker);
