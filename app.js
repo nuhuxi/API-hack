@@ -100,6 +100,7 @@ var cityArray = [];
 function placeDetailsCallbackForPlace (place, status){
     if (status == google.maps.places.PlacesServiceStatus.OK){
         console.log(place);
+        console.log(place.address_components);
     }
 }
 
