@@ -17,7 +17,8 @@ body{
 
 
 .wrap{
-	min-width: 920px
+	min-width: 920px;
+	text-align: center;
 }
 
 .col-xs-1{
@@ -41,12 +42,16 @@ body{
 }
 
 .header{
-	height: 160px;
-	/*background-color:rgb(255, 136, 136);*/
-	border-radius: 0 0 15px 15px;
-	padding: 15px;
+	height: 130px;
+	background-color: #F0F0F0;
+	border-bottom: #BCBCBC solid 2px;
+	/* border-radius: 0 0 15px 15px; */
+	padding: 0 100px;
+	position: fixed;
 	margin-bottom: 40px;
-
+	/* width: 1020px; */
+	left: 0;
+	right: 0;
 }
 
 #map{
@@ -195,6 +200,11 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 	padding: 20px;
 	border-radius: 8px;
 	margin-bottom: 30px;
+	top: 180px;
+	position: absolute;
+	z-index: -10;
+	left: 0;
+	right: 0;
 }
 
 
