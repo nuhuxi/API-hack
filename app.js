@@ -1,5 +1,4 @@
 
-var carouselEnd;
 var searchFieldValue;
 
 
@@ -159,13 +158,13 @@ function callback(results, status){
 
 
 
-        var placeReference = results[i].place_id;
+        // var placeReference = results[i].place_id;
 
-        var placeDetailsRequest = {
-            placeId: placeReference
-        };
+        // var placeDetailsRequest = {
+        //     placeId: placeReference
+        // };
 
-        service.getDetails(placeDetailsRequest, callback);
+        // service.getDetails(placeDetailsRequest, callback);
 
         
         // var delayedLookup = function(placeRequest, placeId){ //function using placeDetailsRequest, i
