@@ -135,6 +135,7 @@ body{
 
 .user-search, .user-search-number, .error-message{
 	display:none;
+	text-align: left;
 }
 
 .user-search-number{
