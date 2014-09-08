@@ -133,6 +133,7 @@ function callback(results, status){
 
 
         var photoForPlace = false;
+        var miniPhoto;
 
         if (photosArray && photosArray.length){ //if there are photos
             photoForPlace = photosArray[0].getUrl({ //make photoForPlace true by accessing the first photo
@@ -142,7 +143,7 @@ function callback(results, status){
                 maxWidth:350
             });
 
-            var miniPhoto = photosArray[0].getUrl({
+            miniPhoto = photosArray[0].getUrl({
                 minHeight: 20,
                 maxHeight: 20,
                 minWidth: 20,
@@ -203,6 +204,7 @@ function callback(results, status){
             name: results[i].name,
             //icon: eachPhotoinArray
             //icon: 'http://i.stack.imgur.com/KOh5X.png'
+            icon:miniPhoto
         });
 
         markersOnMap.push(marker);
