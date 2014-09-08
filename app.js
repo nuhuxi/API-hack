@@ -144,10 +144,10 @@ function callback(results, status){
             });
 
             miniPhoto = photosArray[0].getUrl({
-                minHeight: 20,
-                maxHeight: 20,
-                minWidth: 20,
-                maxWidth: 40
+                minHeight: 40,
+                maxHeight: 40,
+                minWidth: 50,
+                maxWidth: 50
             });
         }
 
@@ -204,7 +204,8 @@ function callback(results, status){
             name: results[i].name,
             //icon: eachPhotoinArray
             //icon: 'http://i.stack.imgur.com/KOh5X.png'
-            icon:miniPhoto
+            //icon:miniPhoto
+            icon: miniPhoto{background:url('http://i.stack.imgur.com/KOh5X.png') no-repeat 4px 4px}
         });
 
         markersOnMap.push(marker);
