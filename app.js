@@ -205,7 +205,7 @@ function callback(results, status){
             //icon: eachPhotoinArray
             //icon: 'http://i.stack.imgur.com/KOh5X.png'
             //icon:miniPhoto
-            icon: miniPhoto{background:url('http://i.stack.imgur.com/KOh5X.png') no-repeat 4px 4px}
+            //icon: miniPhoto{background:url('http://i.stack.imgur.com/KOh5X.png') no-repeat 4px 4px}
         });
 
         markersOnMap.push(marker);
