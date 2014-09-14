@@ -43,66 +43,63 @@ var marker;
 var cityArray = [];
 
 
-//function placeDetailsCallbackForPlace (placeID){
-//     var placeValue = placeID;
 
-//     var  placeDetailsCallback = function (place, status){
 
-//     if (status == google.maps.places.PlacesServiceStatus.OK) {
-//         //console.log (place);
-//         var placeAddress = place.address_components;//an array of address objects
-//         //console.log(placeAddress);
+function placeDetailsCallbackForPlace (placeID){
+    var placeValue = placeID;
 
-//         cityArray = [];
-//         var longName = false;
+    var  placeDetailsCallback = function (place, status){
+
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        //console.log (place);
+        var placeAddress = place.address_components;//an array of address objects
+        //console.log(placeAddress);
+
+        var longName = false;
         
 
-//         for (var i=0; i<placeAddress.length;i++){
-//             var placeAddressObject = placeAddress[i];//each object in array of address objects
-//             //need to target object with a property types 'locality'
+        for (var i=0; i<placeAddress.length;i++){
+            var placeAddressObject = placeAddress[i];//each object in array of address objects
+            //need to target object with a property types 'locality'
 
             
 
 
-//             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
-//                 //console.log(placeAddressObject);
+            if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
+                //console.log(placeAddressObject);
 
-//                 longName = placeAddressObject.long_name;
-//                 console.log(longName);
-//                 //cityArray.push(longName);
-//                 //console.log(cityArray);
+                longName = placeAddressObject.long_name;
+                console.log(longName);
                 
-//                 var resultValue = $('.results').find('li[value="'+placeValue+'"]');
-//                 resultValue.find('.location').text(longName);
-//                 //console.log (placeValue);
-//                 //var locationText= $('.location').text(cityArray[resultValue]);
-//                 break;
+                
+                var resultValue = $('.results').find('li[value="'+placeValue+'"]');
+                resultValue.find('.location').text(longName);
+                //console.log (placeValue);
+                
+                break;
 
-//             }//if statement ends
+            }//if statement ends
 
-//             else if (!longName){
-//                 //console.log (placeAddressObject);
-//                 console.log ('No Long Name');
-//                 //$('.location').text("No City");
-//             }
+            else if (!longName){
+                //console.log (placeAddressObject);
+                console.log ('No Long Name');
+                //$('.location').text("No City");
+            }
 
-//         }//for statement ends
+        }//for statement ends
 
-//     }// if statement ends
+    }// if statement ends
 
-//     };
+    }; //placeDetailsCallback ends
 
-//     return placeDetailsCallback;
+    return placeDetailsCallback;
 
-//}// callback ends
+}// placeDetailsCallbackForPlace ends
 
 
-function placeDetailsCallbackForPlace (place, status){
-    if (status == google.maps.places.PlacesServiceStatus.OK){
-        console.log(place);
-        console.log(place.address_components);
-    }
-}
+
+
+
 
 function callback(results, status){
     //after I send my request, handle the results
@@ -162,7 +159,7 @@ function callback(results, status){
         userSearchNumber.text(userSearchNumberText);
         $('.error-message').hide();
 
-        if((!photoForPlace) || (photoForPlace === undefined)){
+        if((!photoForPlace) || (photoForPlace === undefined)){ //if there are no pics
             //show no picture 
             $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
         } else {
