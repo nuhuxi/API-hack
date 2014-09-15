@@ -54,7 +54,7 @@ function placeDetailsCallbackForPlace (place, status){
         var placeAddress = place.address_components;//an array of address objects
         //console.log(placeAddress);
 
-        var longName = false;
+        var longName;
         
         
 
