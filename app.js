@@ -80,10 +80,10 @@ function placeDetailsCallbackForPlace (place, status){
 
             }//if statement ends
 
-            else if (!longName){
-                console.log ('No Long Name');
-                //$('.location').text("No City");
-            }
+            // else if (!longName){
+            //     console.log ('No Long Name');
+            //     //$('.location').text("No City");
+            // }
 
         }//for statement ends
 
