@@ -185,24 +185,6 @@ function callback(results, status){
         service.getDetails(placeDetailsRequest, placeDetailsCallbackForPlace);
 
 
-
-
-        
-        // var delayedLookup = function(placeRequest, placeId){ //function using placeDetailsRequest, i
-
-        //     var actionPlace = function(){
-        //         var callback = placeDetailsCallbackForPlace(placeId); //placeDetailsCallbackForPlace(for each result)
-        //         service.getDetails(placeRequest, callback); //placeDetailsRequest, callback function for each result [i]
-        //     };
-        //     return actionPlace; //what does this do?
-
-        // };
-
-        // var actionPlace = delayedLookup(placeDetailsRequest, i); //assigning parameters for function
-        // window.setTimeout(actionPlace, i*200); //run actionPlace function AFTER assigning parameters
-    
-
-
         
 
         var marker = new google.maps.Marker({ //marker for the search results
