@@ -58,7 +58,7 @@ function placeDetailsCallbackForPlace (place, status){
         
 
         for (var i=0; i<placeAddress.length;i++){
-            var placeAddressObject = placeAddress[2];//each object in array of address objects
+            var placeAddressObject = placeAddress[i];//each object in array of address objects
             //need to target object with a property types 'locality'
             
 
@@ -67,22 +67,22 @@ function placeDetailsCallbackForPlace (place, status){
 
                 longName = placeAddressObject.long_name;
                 console.log(longName);
-                //cityArray.push(longName);
-                //console.log(cityArray);
+                cityArray.push(longName);
+                console.log(cityArray);
 
                 var resultValue = $('.results').find('li[value="'+i+'"]');
-                resultValue.find('.location').text(longName);
+                resultValue.find('.location').text(cityArray[resultValue]);
                 
                 //break;
 
             }//if statement ends
 
-            else if ((!longName) || (longName === undefined)){    //why does this log first?
-                console.log ('No Long Name');
-                //cityArray.push(longName);
-                //console.log(cityArray);
-                $('.location').text("No City");
-            }
+            // else if ((!longName) || (longName === undefined)){    //why does this log first?
+            //     console.log ('No Long Name');
+            //     //cityArray.push(longName);
+            //     //console.log(cityArray);
+            //     $('.location').text("No City");
+            // }
 
         }//for statement ends
 
