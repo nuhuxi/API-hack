@@ -66,22 +66,19 @@ function placeDetailsCallbackForPlace (place, status){
                 //console.log(placeAddressObject);
 
                 longName = placeAddressObject.long_name;
-                //console.log(longName);
-                //cityArray.push(longName);
-                //console.log(cityArray);
-                
-                
+                console.log(longName);
+
                 var resultValue = $('.results').find('li[value="'+i+'"]');
                 resultValue.find('.location').text(longName);
                 
-                break;
+                //break;
 
             }//if statement ends
 
-            // else if (!longName){    //why does this log first?
-            //     console.log ('No Long Name');
-            //     //$('.location').text("No City");
-            // }
+            else if ((!longName) || (longName === undefined)){    //why does this log first?
+                console.log ('No Long Name');
+                $('.location').text("No City");
+            }
 
         }//for statement ends
 
