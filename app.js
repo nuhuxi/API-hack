@@ -70,7 +70,7 @@ function placeDetailsCallbackForPlace (place, status){
                 //console.log(placeAddressObject);
 
                 longName = placeAddressObject.long_name;
-                //console.log(longName);
+                console.log(longName);
                 
                 var resultValue = $('.results').find('li[value="'+cityArray[i]+'"]');
                 resultValue.find('.location').text(longName);
