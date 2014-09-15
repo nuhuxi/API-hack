@@ -46,7 +46,7 @@ var cityArray = [];
 
 
 function placeDetailsCallbackForPlace (place, status){
-    console.log(place);
+    //console.log(place);
 
 
     if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -62,13 +62,12 @@ function placeDetailsCallbackForPlace (place, status){
             var placeAddressObject = placeAddress[i];//each object in array of address objects
             //need to target object with a property types 'locality'
             
-            
 
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
                 //console.log(placeAddressObject);
 
                 longName = placeAddressObject.long_name;
-                console.log(longName);
+                //console.log(longName);
                 //cityArray.push(longName);
                 //console.log(cityArray);
                 
@@ -130,7 +129,13 @@ function callback(results, status){
         var miniPhoto;
 
         if (photosArray && photosArray.length){ //if there are photos
-            photoForPlace = photosArray[0].getUrl({ //make photoForPlace true by accessing the first photo
+
+            for(var x in photosArray){// each photo in one result
+                photoForPlace = x;
+                console.log(x);
+            }
+
+            photoForPlace = photosArray[0].getUrl({ //make photoForPlace true by accessing the first photo in one of the results
                 minHeight:190,
                 maxHeight:250,
                 minWidth:230,
