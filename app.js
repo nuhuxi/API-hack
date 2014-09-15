@@ -45,14 +45,13 @@ var cityArray = [];
 
 
 
-function placeDetailsCallbackForPlace (placeID){
+function placeDetailsCallbackForPlace (placeID, status){
     console.log(placeID);
     var placeValue = placeID;
 
-    var  placeDetailsCallback = function (place, status){
 
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        console.log ("hello place" + place);
+        
         var placeAddress = place.address_components;//an array of address objects
         //console.log(placeAddress);
 
@@ -70,9 +69,11 @@ function placeDetailsCallbackForPlace (placeID){
 
                 longName = placeAddressObject.long_name;
                 console.log(longName);
+                cityArray.push(longName);
+                console.log(cityArray);
                 
                 
-                var resultValue = $('.results').find('li[value="'+placeValue+'"]');
+                var resultValue = $('.results').find('li[value="'+cityArray[i]+'"]');
                 resultValue.find('.location').text(longName);
                 //console.log (placeValue);
                 
@@ -90,11 +91,10 @@ function placeDetailsCallbackForPlace (placeID){
 
     }// if statement ends
 
-    }; //placeDetailsCallback ends
+} //placeDetailsCallback ends
 
     return placeDetailsCallback;
 
-}// placeDetailsCallbackForPlace ends
 
 
 
@@ -182,18 +182,18 @@ function callback(results, status){
 
 
         
-        var delayedLookup = function(placeRequest, placeId){ //function using placeDetailsRequest, i
+        // var delayedLookup = function(placeRequest, placeId){ //function using placeDetailsRequest, i
 
-            var actionPlace = function(){
-                var callback = placeDetailsCallbackForPlace(placeId); //placeDetailsCallbackForPlace(for each result)
-                service.getDetails(placeRequest, callback); //placeDetailsRequest, callback function for each result [i]
-            };
-            return actionPlace; //what does this do?
+        //     var actionPlace = function(){
+        //         var callback = placeDetailsCallbackForPlace(placeId); //placeDetailsCallbackForPlace(for each result)
+        //         service.getDetails(placeRequest, callback); //placeDetailsRequest, callback function for each result [i]
+        //     };
+        //     return actionPlace; //what does this do?
 
-        };
+        // };
 
-        var actionPlace = delayedLookup(placeDetailsRequest, i); //assigning parameters for function
-        window.setTimeout(actionPlace, i*200); //run actionPlace function AFTER assigning parameters
+        // var actionPlace = delayedLookup(placeDetailsRequest, i); //assigning parameters for function
+        // window.setTimeout(actionPlace, i*200); //run actionPlace function AFTER assigning parameters
     
 
 
