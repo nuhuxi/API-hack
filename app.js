@@ -78,12 +78,12 @@ function placeDetailsCallbackForPlace (place, status){
 
             }//if statement ends
 
-            // else if ((!longName) || (longName === undefined)){    //why does this log first?
-            //     console.log ('No Long Name');
-            //     cityArray.push(longName);
-            //     console.log(cityArray);
-            //     //$('.location').text("No City");
-            // }
+            else if ((!longName) || (longName === undefined)){    //why does this log first?
+                console.log ('No Long Name');
+                cityArray.push(longName);
+                console.log(cityArray);
+                //$('.location').text("No City");
+            }
 
         }//for statement ends
 
