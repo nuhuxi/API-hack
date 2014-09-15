@@ -75,12 +75,12 @@ function placeDetailsCallbackForPlace (place, status){
 
             }//if statement ends
 
-        }//for statement ends
+            else if ((!longName) || (longName === undefined)){    //why does this log first?
+                console.log ('No Long Name');
+                $('.location').text("No City");
+            }
 
-        if ((!longName) || (longName === undefined)){    //why does this log first?
-            console.log ('No Long Name');
-            $('.location').text("No City");
-        }
+        }//for statement ends
 
     }// if statement ends
 
