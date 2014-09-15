@@ -45,9 +45,9 @@ var cityArray = [];
 
 
 
-function placeDetailsCallbackForPlace (placeID, status){
-    console.log(placeID);
-    var placeValue = placeID;
+function placeDetailsCallbackForPlace (place, status){
+    console.log(place);
+    var placeValue = place;
 
 
     if (status == google.maps.places.PlacesServiceStatus.OK) {
