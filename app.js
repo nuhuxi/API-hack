@@ -93,7 +93,6 @@ function placeDetailsCallbackForPlace (placeID, status){
 
 } //placeDetailsCallback ends
 
-    return placeDetailsCallback;
 
 
 
