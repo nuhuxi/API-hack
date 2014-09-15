@@ -76,7 +76,7 @@ function placeDetailsCallbackForPlace (place, status){
                 //var resultValue = $('.results').find('li[value="'+i+'"]');
                 //resultValue.find('.location').text(longName);
                 
-                //break;
+                break;
 
             }//if statement ends
 
