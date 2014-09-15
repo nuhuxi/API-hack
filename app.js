@@ -69,8 +69,8 @@ function placeDetailsCallbackForPlace (placeID, status){
 
                 longName = placeAddressObject.long_name;
                 console.log(longName);
-                cityArray.push(longName);
-                console.log(cityArray);
+                //cityArray.push(longName);
+                //console.log(cityArray);
                 
                 
                 var resultValue = $('.results').find('li[value="'+cityArray[i]+'"]');
