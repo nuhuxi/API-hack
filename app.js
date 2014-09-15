@@ -52,7 +52,7 @@ function placeDetailsCallbackForPlace (placeID){
     var  placeDetailsCallback = function (place, status){
 
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        console.log (hello place);
+        console.log ("hello place" + place);
         var placeAddress = place.address_components;//an array of address objects
         //console.log(placeAddress);
 
