@@ -71,19 +71,19 @@ function placeDetailsCallbackForPlace (place, status){
                 console.log(cityArray);
 
                 var resultValue = $('.results').find('li[value="'+i+'"]');
-                var targetResultValue = $('.results').attr('value');
+                //var targetResultValue = $('.results').attr('value');
                 resultValue.find('.location').text(longName);
                 
                 break;
 
             }//if statement ends
 
-            else if ((!longName) || (longName === undefined)){    //why does this log first?
-                console.log ('No Long Name');
-                cityArray.push(longName);
-                console.log(cityArray);
-                //$('.location').text("No City");
-            }
+            // else if ((!longName) || (longName === undefined)){    //why does this log first?
+            //     console.log ('No Long Name');
+            //     cityArray.push(longName);
+            //     console.log(cityArray);
+            //     //$('.location').text("No City");
+            // }
 
         }//for statement ends
 
