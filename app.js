@@ -67,16 +67,14 @@ function placeDetailsCallbackForPlace (place, status){
 
                 longName = placeAddressObject.long_name;
                 console.log(longName);
-                cityArray.push(longName);
-                console.log(cityArray);
+                //cityArray.push(longName);
+                //console.log(cityArray);
 
                 var resultValue = $('.results').find('li[value="'+i+'"]');
-                var targetResultValue = $('.results').attr('value');
-                resultValue.find('.location').text(cityArray[targetResultValue]);
+                //var targetResultValue = $('.results').attr('value');
+                resultValue.find('.location').text(cityArray[longName]);
                 
-
-               
-                //break;
+                break;
 
             }//if statement ends
 
