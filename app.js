@@ -46,6 +46,7 @@ var cityArray = [];
 
 
 function placeDetailsCallbackForPlace (placeID){
+    console.log(placeID);
     var placeValue = placeID;
 
     var  placeDetailsCallback = function (place, status){
