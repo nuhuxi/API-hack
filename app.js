@@ -61,6 +61,7 @@ function placeDetailsCallbackForPlace (place, status){
 
         for (var i=0; i<cityArray.length;i++){
             var placeID = cityArray[i];
+            console.log(placeID);
             var placeAddress = placeID.address_components;//an array of address objects for place
             var placeAddressObject = placeAddress[i];//each object in array of address objects
             //need to target object with a property types 'locality'
