@@ -48,21 +48,16 @@ var cityArray = [];
 function placeDetailsCallbackForPlace (place, status){
     console.log(place);
 
-    cityArray.push(place);
-    console.log(cityArray);
-
 
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         
+        var placeAddress = place.address_components;//an array of address objects
+        //console.log(placeAddress);
 
-        var longName;
-        
+        var longName = false;
         
 
-        for (var i=0; i<cityArray.length;i++){
-            var placeID = cityArray[i];
-            console.log(placeID);
-            var placeAddress = placeID.address_components;//an array of address objects for place
+        for (var i=0; i<placeAddress.length;i++){
             var placeAddressObject = placeAddress[i];//each object in array of address objects
             //need to target object with a property types 'locality'
             
@@ -71,16 +66,19 @@ function placeDetailsCallbackForPlace (place, status){
                 //console.log(placeAddressObject);
 
                 longName = placeAddressObject.long_name;
-                console.log(longName);
+                //console.log(longName);
+                //cityArray.push(longName);
+                //console.log(cityArray);
                 
-                var resultValue = $('.results').find('li[value="'+cityArray[i]+'"]');
+                
+                var resultValue = $('.results').find('li[value="'+i+'"]');
                 resultValue.find('.location').text(longName);
                 
                 break;
 
             }//if statement ends
 
-            // else if (!longName){
+            // else if (!longName){    //why does this log first?
             //     console.log ('No Long Name');
             //     //$('.location').text("No City");
             // }
