@@ -52,7 +52,7 @@ function placeDetailsCallbackForPlace (placeID){
     var  placeDetailsCallback = function (place, status){
 
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        //console.log (place);
+        console.log (place);
         var placeAddress = place.address_components;//an array of address objects
         //console.log(placeAddress);
 
@@ -64,7 +64,6 @@ function placeDetailsCallbackForPlace (placeID){
             //need to target object with a property types 'locality'
 
             
-
 
             if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
                 //console.log(placeAddressObject);
@@ -162,9 +161,9 @@ function callback(results, status){
 
         if((!photoForPlace) || (photoForPlace === undefined)){ //if there are no pics
             //show no picture 
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'>''</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'></div></li>");
         } else {
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>Location</div></li>");
+            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'></div></li>");
         }
     
 
