@@ -46,7 +46,10 @@ var cityArray = [];
 
 
 function placeDetailsCallbackForPlace (place, status){
-    //console.log(place);
+    console.log(place);
+
+    cityArray.push(place);
+    console.log(cityArray);
 
 
     if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -130,10 +133,15 @@ function callback(results, status){
 
         if (photosArray && photosArray.length){ //if there are photos
 
-            for(var x in photosArray){// each photo in one result
-                photoForPlace = x;
-                console.log(x);
-            }
+            // for(var x in photosArray){// each photo in one result
+            //     x = 0;
+            //     var eachPhotoInResult = photosArray[x].getUrl({
+            //     minHeight:190,
+            //     maxHeight:250,
+            //     minWidth:230,
+            //     maxWidth:350
+            //     });
+            // }
 
             photoForPlace = photosArray[0].getUrl({ //make photoForPlace true by accessing the first photo in one of the results
                 minHeight:190,
