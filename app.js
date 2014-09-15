@@ -62,7 +62,7 @@ function placeDetailsCallbackForPlace (place, status){
             //need to target object with a property types 'locality'
             
 
-            if(placeAddressObject.types[0] === "locality"){ //if the place address object has type property 'locality'
+            if((placeAddressObject.types[0] === "locality") || (placeAddressObject.types[0] === "neighborhood")){ //if the place address object has type property 'locality'
                 //console.log(placeAddressObject);
 
                 longName = placeAddressObject.long_name;
