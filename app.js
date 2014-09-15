@@ -71,7 +71,7 @@ function placeDetailsCallbackForPlace (place, status){
                 console.log(cityArray);
 
                 var resultValue = $('.results').find('li[value="'+i+'"]');
-                var targetResultValue = $(this).attr('value');
+                var targetResultValue = $('.results').attr('value');
                 resultValue.find('.location').text(cityArray[targetResultValue]);
                 
 
