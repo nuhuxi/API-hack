@@ -222,6 +222,11 @@ span.glyphicon.glyphicon-circle-arrow-left:hover:hover,span.glyphicon.glyphicon-
 	font-size: 12px;
 	text-align: right;
 	padding: 10px;
+
+	background-size: 18px;
+	background-repeat: no-repeat;
+	background-position: 40%;
+	background-image: url(https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519580-076_LocationArrow-512.png);
 }
 
 
