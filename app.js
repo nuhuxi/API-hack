@@ -54,40 +54,14 @@ function placeDetailsCallbackForPlace (place, status){
         var placeAddress = place.address_components;//an array of address objects
         //console.log(placeAddress);
 
-        var longName = false;
-        
+        //var longName = false;
 
-        for (var i=0; i<placeAddress.length;i++){
-            var placeAddressObject = placeAddress[i];//each object in array of address objects
-            //need to target object with a property types 'locality'
-            
-
-            if((placeAddressObject.types[0] === "locality") || (placeAddressObject.types[0] === "neighborhood")){ //if the place address object has type property 'locality'
-                //console.log(placeAddressObject);
-
-                longName = placeAddressObject.long_name;
-                console.log(longName);
-                //cityArray.push(longName);
-                //console.log(cityArray);
-
-                var resultValue = $('.results').find('li[value="'+i+'"]');
-                //var targetResultValue = $('.results').attr('value');
-                resultValue.find('.location').text(longName);
+        longName = placeAddress[2].long_name;
+        var resultValue = $('.results').find('li[value="'+place.place_id+'"]')('.location');
+        resultValue.text(longName);
                 
-                break;
 
-            }//if statement ends
-
-            // else if ((!longName) || (longName === undefined)){    //why does this log first?
-            //     console.log ('No Long Name');
-            //     //cityArray.push(longName);
-            //     //console.log(cityArray);
-            //     //$('.location').text("No City");
-            // }
-
-        }//for statement ends
-
-    }// if statement ends
+    }//if statement ends
 
 } //placeDetailsCallback ends
 
@@ -169,9 +143,9 @@ function callback(results, status){
 
         if((!photoForPlace) || (photoForPlace === undefined)){ //if there are no pics
             //show no picture 
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'></div></li>");
+            $('.results').append("<li value ='"+i+"' data-id = '"+results[i].place_id+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'>No City</div></li>");
         } else {
-            $('.results').append("<li value ='"+i+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'></div></li>");
+            $('.results').append("<li value ='"+i+"' data-id = '"+results[i].place_id+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'>No City</div></li>");
         }
     
 
