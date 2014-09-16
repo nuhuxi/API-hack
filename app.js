@@ -57,8 +57,8 @@ function placeDetailsCallbackForPlace (place, status){
         //var longName = false;
 
         longName = placeAddress[2].long_name;
-        var resultValue = $('.results').find('li[value="'+place.place_id+'"]')('.location');
-        resultValue.text(longName);
+        var resultValue = $('.results').find('li[data-id="'+place.place_id+'"]');
+        resultValue.find('.location').text(longName);
                 
 
     }//if statement ends
