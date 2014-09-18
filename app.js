@@ -143,7 +143,7 @@ function callback(results, status){
 
         if((!photoForPlace) || (photoForPlace === undefined)){ //if there are no pics
             //show no picture 
-            $('.results').append("<li value ='"+i+"' data-id = '"+results[i].place_id+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'><img src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519580-076_LocationArrow-512.png" style="width:10px; margin-right: 10px;">City Not Available</div></li>");
+            $('.results').append("<li value ='"+i+"' data-id = '"+results[i].place_id+"'><div class='food-thumbnail'><img style='width:230px;top: -40px;position: absolute;left: 0;' value = '"+i+"' src='http://www.uwplatt.edu/files/styles/high_resolution/public/image_fields/directory_image/image-not-available_1.jpg?itok=GIB8RUHy'></div><div class='resultName'>"+placeName+"</div><div class='location'><img src='https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519580-076_LocationArrow-512.png' style='width:10px; margin-right: 10px;''>City Not Available</div></li>");
         } else {
             $('.results').append("<li value ='"+i+"' data-id = '"+results[i].place_id+"'><div class='food-thumbnail'><img style='height:190px;min-width: 230px;' value = '"+i+"' src='"+photoForPlace+"'></div><div class='resultName'>"+placeName+"</div><div class='location'><img src='https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519580-076_LocationArrow-512.png'>City Not Available</div></li>");
         }
